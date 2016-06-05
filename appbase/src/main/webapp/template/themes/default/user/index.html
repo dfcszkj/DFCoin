@@ -1,0 +1,141 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+    <script src="${ctx}/layer/jquery.min.js"></script>
+    <script src="${ctx}/layer/layer.js"></script>
+</head>
+<body>
+    <!--顶部开始-->
+    <!--4列表开始-->
+    <?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+    <div class="w96">
+        <div class="w100">
+            <!--每日收益开始-->
+            <div class="tabku">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="images/dian_tab1.png" /><span>每日收益</span></div>
+                    <a class="tabtopri" href="/user/meirishouyi">查看更多>></a>
+                </div>
+                <div class="w100">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                        <tbody>
+                        <tr class="trbt">
+                            <td align="center" valign="middle">日期</td>
+                            <td width="14%" align="center" valign="middle">直推奖</td>
+                            <td width="14%" align="center" valign="middle">团队奖</td>
+                            <td width="14%" align="center" valign="middle">经理奖</td>
+                            <td width="14%" align="center" valign="middle">小计</td>
+                        </tr>
+                        <? if(exist("meiriPage") && meiriPage != null){ ?>
+                            <?for(ff in meiriPage.list!){?>
+                                <tr class="trhs">
+                                    <td align="center" valign="middle">${ff.create_time,'yyyy-MM-dd'}</td>
+                                    <td align="center" valign="middle" class="tdno">${ff.price1!0}</td>
+                                    <td align="center" valign="middle">${ff.price2!0}</td>
+                                    <td align="center" valign="middle">${ff.price3!0}</td>
+                                    <td align="center" valign="middle">${ff.price1!0+ff.price2!0+ff.price3!0}</td>
+                                </tr>
+                            <?}?>
+                        <? } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--每日收益结束-->
+            <!--账户明细开始-->
+            <div class="tabku">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="images/dian_tab2.png" /><span>账户明细</span></div>
+                    <a class="tabtopri" href="/user/zhanghumingxi">查看更多>></a>
+                </div>
+                <div class="w100">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                        <tbody>
+                        <tr class="trbt">
+                            <td align="center" valign="middle">时间</td>
+                            <td width="15%" align="center" valign="middle">类型</td>
+                            <td width="15%" align="center" valign="middle">收入</td>
+                            <td width="15%" align="center" valign="middle" style="display: none;">余额</td>
+                            <td width="15%" align="center" valign="middle" class="tdno">备注</td>
+                        </tr>
+                        <? if(exist("mingxipage") && mingxipage != null){ ?>
+                        <?for(ff in mingxipage.list!){?>
+                        <tr class="trhs">
+                            <td align="center" valign="middle">${ff.create_time,'yyyy-MM-dd HH:ss'}</td>
+                            <td align="center" valign="middle">${moneyTypeMap[ff.type]}</td>
+                            <td align="center" valign="middle">${ff.price!}</td>
+                            <td align="center" valign="middle" style="display: none;">${ff.yuPrice!0}</td>
+                            <td align="center" valign="middle" class="tdno">${ff.remark!}</td>
+                        </tr>
+                        <?}?>
+                        <? } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--账户明细结束-->
+        </div>
+        <div class="w100">
+            <!--新闻公告开始-->
+            <div class="tabku">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="images/dian_tab3.png" /><span>新闻公告</span></div>
+                    <a class="tabtopri" href="/gonggao">查看更多>></a>
+                </div>
+                <? if(exist("gonggaopage") && gonggaopage != null){ ?>
+                <?for(ff in gonggaopage.list!){?>
+                <div class="gonggao">
+                    <div class="w100"><div class="ggbt"><a href="#"  class="hrtitles" data-value="${ff.id!}">${ff.title!}</a><font class="fontggsj">&nbsp;&nbsp;${ff.create_time,'yyyy-MM-dd'}</font></div></div>
+                    <div class="ggjj">${ff.content}</div>
+                </div>
+                <?}?>
+                <? } ?>
+            </div>
+            <!--新闻公告结束-->
+            <!--我的矿机开始-->
+            <div class="tabku">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="images/dian_tab4.png" /><span>我的矿机</span></div>
+                    <a class="tabtopri" href="www.163.com" style="display: none;">查看更多>></a>
+                </div>
+                <div class="w100">
+                    <div class="wakuang">
+                        <div class="wkk">
+                            <div class="wkle">当前矿机级别</div><div class="wkri"><div class="wkribl"> <?if(user.level==1) {?>未激活<?}else{?>${user.userlevel!}<?}?></div><a href="/user/jihuo" class="zhjh" <?if(user.level==3) {?> style='display:none'<?}?> >激活</a><!--不可用class请用zhjh2--></div>
+                            <div class="wkle">会员级别</div><div class="wkri"><div class="wkribl">${accountStateMap[user.state!1]}</div><!--不可用class请用zhjh2--></div>
+                            <div class="wkle">挖币量</div><div class="wkri"><div class="wkribl"  id="showChan" data-value="${user.userlevelmoney!0}">枚/天</div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w100" style="text-align:center;"><img <? if(user.level==1){ ?>src='${ctx}/template/themes/${site.theme!}/user/images/kuangji_nomal.jpg'<? }else{ ?> src='${ctx}/template/themes/${site.theme!}/user/images/kuangji_active.gif'<? }?>style="width:70%; height:auto;" /></div>
+            </div>
+            <!--我的矿机结束-->
+        </div>
+    </div>
+    <!--4列表结束-->
+    <div class="jiange">&nbsp;</div>
+
+    </div>
+    </div>
+    <!--右侧结束-->
+    <script type="text/javascript">
+$(function(){
+    $("#showChan").html((parseInt($("#showChan").attr("data-value"))*0.02)+"枚/天");
+})
+        $('.hrtitles').on('click', function () {
+            layer.open({
+                type: 2,
+                title: $(this).html(),
+                maxmin: true,
+                shadeClose: true, //点击遮罩关闭层
+                area: ['450px', '500px'],
+                content: '/gonggao/detail?id='+$(this).attr("data-value")
+            });
+        });
+    </script>
+</body>
+</html>

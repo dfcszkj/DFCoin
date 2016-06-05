@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<title>DF COIN</title>
+<link href="${ctx}/template/themes/${site.theme!}/css/css_pc.css" rel="stylesheet" type="text/css">
+<link href="${ctx}/template/themes/${site.theme!}/css/lrtk.css" rel="stylesheet" type="text/css">
+<script src="${ctx}/template/themes/${site.theme!}/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+	<script src="${ctx}/layer/layer.js"></script>
+	<script src="${ctx}/js/common.js"></script>
+</head>
+
+<body>
+<!--加载开始-->
+<div class="jiaz" id="jiaz">
+<div class="jiazw">正在自动转换系统语言，请稍后<br />Automatic conversion system language, please...<br />지금 자동 교환 시스템 언어, 좀 이따<br />
+  <img src="${ctx}/template/themes/${site.theme!}/images/wait.gif" alt=""/></div>
+</div>
+<script>
+$(function(){
+setTimeout('$("#jiaz").fadeOut("slow")',3000);
+})
+</script>
+<!--加载结束-->
+<!--窄屏导航开始-->
+<div class="zpdh">
+<div class="w100">
+<div class="biaozhiz"><a href="#"><img src="${ctx}/template/themes/${site.theme!}/images/biaozhi02.png" alt=""/></a></div>
+<a class="zpdhr" id="alyy">Language</a>
+<a name="aldl" class="zpdhr2" id="aldl">Login</a>
+</div>
+<div class="zpdhtc" id="tancyy">
+<div class="w100">
+<a class="zdhtc" href="/index">中文</a>
+<a class="zdhtc" href="/indexe">English</a>
+<a class="zdhtc" href="/indexh">한글</a>
+</div>
+<a class="tcshouh" id="shyy"><img src="${ctx}/template/themes/${site.theme!}/images/tcshouh.png"/></a>
+</div>
+</div>
+<script>
+$(document).ready(function() {
+   $("#tancdh,#tancyy").hide(); 
+   $("#aldh").click(function(){
+	   $("#tancyy").hide();
+	   $("#tancdh").show(150);
+	   })
+   $("#alyy").click(function(){
+	   $("#tancdh").hide();
+	   $("#tancyy").show(150);
+	   })  
+   $("#shdh").click(function(){
+	   $("#tancdh").hide(150);
+	   })  
+	$("#shyy").click(function(){
+	   $("#tancyy").hide(150);
+	   })  
+});
+</script>
+<div class="tczhuce" id="tcdl">
+<div class="w100"><div class="fg_r"><div class="zcgbdw"><a class="zcgb" id="gbdl">×</a></div></div></div>
+<form>
+<div class="w90">
+<div class="zcbt">User login</div>
+<input type="text" class="inpdl" placeholder="Enter your user name" id="login_name1">
+<input type="password" class="inpdl" placeholder="Enter your password" id="passwd1">
+<div class="w100"><div class="yzm1"><input type="text" class="inpdl" placeholder="verification code"  id="verify-code-input1"></div>
+	<div class="yzm1"><img  id="codeImg1" src="${ctx}/captcha"/></div></div>
+</div>
+<a class="aldlu"  id="loginBtn1">Sign in</a>
+</form>
+</div>
+<script>
+$(document).ready(function() {
+ $("#tcdl").hide();
+       $("#aldl").click(function(){
+	   $("#tcdl").show(150);
+	   })
+ $("#gbdl").click(function(){
+	   $("#tcdl").hide(150);
+	   })
+})
+</script>
+<!--窄屏导航结束-->
+<!--通栏开始-->
+<div class="top">
+<!--滚动图片开始-->
+<div class="slide_container">
+<ul class="rslides" id="slider">
+<li>
+<img src="${ctx}/template/themes/${site.theme!}/images/bar02.jpg" alt="">
+<div class="gtwo" style="display: none;">DF COIN——The model of the fourth generation digital money</div>
+</li>
+<li>
+<img src="${ctx}/template/themes/${site.theme!}/images/bar03.jpg" alt="">
+<div class="gtwo" style="display: none;">Digital money - let's dig the gold mine of modern finance</div>
+</li>
+<li>
+<img src="${ctx}/template/themes/${site.theme!}/images/bar04.jpg" alt="">
+<div class="gtwo" style="display: none;">DF COIN<br />One hundred billion digital currency trading platform</div>
+</li>
+</ul>
+</div>
+<!--滚动图片结束-->
+</div>
+<!--通栏结束-->
+<!--宽时登录开始-->
+
+<div class="w1200_2">
+<div class="kdenlul">
+<div class="kpzhuce">
+<form>
+<div class="w90">
+<div class="zcbt">User login</div>
+<input type="text" class="inpdl" placeholder="Enter your user name" id="login_name">
+<input type="password" class="inpdl" placeholder="Enter your password" id="passwd">
+<div class="w100"><div class="yzm1"><input type="text" class="inpdl" placeholder="verification code" id="verify-code-input"></div>
+	<div class="yzm1"><img id="codeImg" src="${ctx}/captcha"/></div></div>
+</div>
+<a class="aldlu" id="loginBtn">Sign in</a>
+</form>
+</div>
+</div>
+</div>
+
+<!--宽时登录结束-->
+<!--宽导航开始-->
+<div class="nbiaoz"><img src="${ctx}/template/themes/${site.theme!}/images/biaozhi03.png" /></div>
+<div class="nyuyan" id="nyuyan">
+<div class="nyy1">English</div>
+<div class="nyy2" id="nyy2"><a href="/index" class="anyy">中文</a><a href="/indexh" class="anyy">한글</a></div>
+</div>
+<script>
+$(document).ready(function() {
+    $("#nyy2").hide();
+	$("#nyuyan").mouseover(function() {
+    $("#nyy2").show(100);		
+		})
+	$("#nyuyan").mouseleave(function() {
+		 $("#nyy2").hide(100);
+		})
+});
+
+</script>
+<!--宽导航结束-->
+<!--德丰币回报开始-->
+<div class="w100">
+<div class="w1200">
+<div class="w90">
+<div class="huib">
+<div class="w100fg"><font class="font40">DEFOND - became the new darling of the investment high return money</font></div>
+<div class="w100"><font class="font16">In 2009, if you choose to exchange 10 thousand coins with 2 pizza coupons, now you have become a billionaire! Bitcoin three year surge 1 million 170 thousand times, missed opportunities, there will be! Tak Fung currency as a new generation of electronic money is now recruiting members, 1200W parent currency on sale;</font></div>
+</div>
+<div class="sank">
+<div class="sanks"><img src="${ctx}/template/themes/${site.theme!}/images/yuan01.png" alt=""/><br /><font class="font24">Investment security</font><br />Draper Tim founder, headquartered in Silicon Valley, is the world's leading Vc firm</div>
+<div class="sanks"><img src="${ctx}/template/themes/${site.theme!}/images/yuan02.png" alt=""/><br /><font class="font24">Income stability</font><br />Mining + prize award + + declaration management management award, money can not stop</div>
+<div class="sanks"><img src="${ctx}/template/themes/${site.theme!}/images/yuan03.png" alt=""/><br /><font class="font24">Lift is convenient</font><br />Trading platform, membership consignment, official purchase, withdrawals at any time, capital controls and security</div>
+</div>
+</div>
+</div>
+</div>
+<!--德丰币回报结束-->
+<!--德丰币之父开始-->
+<div class="w100y">
+<div class="w1200">
+<div class="w90">
+<div class="huib">
+<div class="w100"><img src="${ctx}/template/themes/${site.theme!}/images/yuan04.png" alt="" class="imgtim"/></div>
+<div class="w100fg"><font class="font40">Father of the DF COIN — Tim Draper</font></div>
+<div class="w100"><font class="font16">Draper Fisher JurvetsonBy Tim Draper as members of the third generation of family founded and headquartered in Silicon Valley, is the world famous large risk investment company, and have successful investment digital currency reach in South Korea's largest bitcoin start-up companies of Coinplug amount of investment. Now in order to cover more countries of the network market started at the same time, ready to issue 6 months DF currency pre launched in the form of compounding cumulative membership.</font></div>
+</div>
+</div>
+</div>
+</div>
+<!--德丰币这父结束-->
+<!--资讯开始-->
+<div class="w100">
+<div class="w1200">
+<div class="w90">
+<div class="huib"><div class="w100fg"><font class="font40">De Feng Jie information</font></div></div>
+<div class="zixun">
+<div class="zxtu"><a href="#"><img src="${ctx}/template/themes/${site.theme!}/images/zixun1.jpg" alt=""/></a></div>
+<div class="zxwo">
+<div class="zxwobt">Outstanding entrepreneur</div>
+<div class="zxwojj"><font class="font16">Great companies are from great entrepreneurs. Since the beginning of 1985, we have and some of the best entrepreneurs in the use of new technology to create a miracle.</font></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--资讯结束-->
+<!--交易额开始-->
+<div class="w100y" >
+<div class="w1200">
+<div class="w90">
+<div class="huib">
+<font class="font40hs" style="display: none;">Cumulative transaction amount</font><font class="font40"> 93 </font><font class="font40hs">Billion</font><font class="font40"> 3067 </font><font class="font40hs">ten thousand</font>
+</div>
+<div class="w100"><a class="shengq">Application to become a member of the German currency</a></div>
+</div>
+</div>
+</div>
+<!--交易额结束-->
+<!--版权开始-->
+<div class="end" style="display: none;">
+<div class="w1200">
+<div class="w90">
+<div class="endk1">
+<div class="w100">
+© defengbi.com  China's business management company    IC8741254号<br>
+Address: No. 79, Hefei City Center branch of High-tech Zone scientific road 3 Building 1 layer<br>
+Zip code：230088
+</div>
+<div class="endtel2">TEL：400-888-999（MON~SAT8:30-17:30）<br /><a href="#" class="awh"> Mail</a>&nbsp;&nbsp;<a href="#" class="awh"> Message</a></div>
+<div class="w100">
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_wx.png"  alt="" class="encfx"/></a>
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_sina.png"  alt="" class="encfx"/></a>
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_tx.png"  alt="" class="encfx"/></a>
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_kj.png"  alt="" class="encfx"/></a>
+</div>
+</div>
+<div class="endk2">
+<div class="tel"><font class="fonttel">400-888-999</font><br />MON~SAT 8：30-17：30</div>
+<div class="w100">
+<a href="#" class="endmail">Mail</a><a href="#" class="endly"> Message</a> </div>
+</div>
+<div class="endk3">
+<div class="endk3ewm"><img src="${ctx}/template/themes/${site.theme!}/images/ewm01.png" alt=""/><br />WeChat</div>
+<div class="endk3ewm"><img src="${ctx}/template/themes/${site.theme!}/images/ewm02.png" alt=""/><br />Blog</div>
+</div>
+</div>
+</div>
+</div>
+<!--版权结束-->
+<script src="${ctx}/template/themes/${site.theme!}/js/responsiveslides.min.js"></script>
+<script src="${ctx}/template/themes/${site.theme!}/js/slide.js"></script>
+</body>
+</html>
+<script>
+	$(function () {
+		$("#verify-img,#codeImg").click(reloadVerifyImg);
+		$(document).keypress(function(e) {
+			// 回车键事件
+			if(e.which == 13) {
+				$("#loginBtn").click();
+			}
+		});
+
+		//登录
+		$("#loginBtn").click(function(){
+			var username = $.trim($("#login_name").val());
+			var passwd = $.trim($("#passwd").val());
+			var vcode = $.trim($("#verify-code-input").val());
+			if(username.length == 0) {
+				showErr("用户名不能为空");
+				return false;
+			} else if(passwd.length == 0) {
+				showErr("密码不能为空");
+				return false;
+			} else if(vcode.length != 4) {
+				showErr("验证码错误");
+				return false;
+			}
+			gravel.ajax("/ajax/login",{"password":passwd,"vcode":vcode,"login_name":username}, function (obj) {
+				if(obj){
+					if(obj.result){
+						location.href="/user";
+					}else{
+						alert(obj.message);
+					}
+				}else{
+
+				}
+			});
+		});
+		$("#loginBtn1").click(function(){
+			var username = $.trim($("#login_name1").val());
+			var passwd = $.trim($("#passwd1").val());
+			var vcode = $.trim($("#verify-code-input1").val());
+			if(username.length == 0) {
+				showErr("用户名不能为空");
+				return false;
+			} else if(passwd.length == 0) {
+				showErr("密码不能为空");
+				return false;
+			} else if(vcode.length != 4) {
+				showErr("验证码错误");
+				return false;
+			}
+			gravel.ajax("/ajax/login",{"password":passwd,"vcode":vcode,"login_name":username}, function (obj) {
+				if(obj){
+					if(obj.result){
+						location.href="/user";
+					}else{
+						alert(obj.message);
+					}
+				}else{
+
+				}
+			});
+		});
+	})
+	function  reloadVerifyImg(){
+		$("#codeImg,#codeImg1").attr("src","${ctx}/captcha?rand="+Math.random());
+	}
+</script>

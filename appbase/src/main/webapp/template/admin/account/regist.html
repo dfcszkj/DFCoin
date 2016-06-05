@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>注册 - FinalCMS Admin</title>
+
+<meta name="description" content="User login page" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<!-- text fonts -->
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<!-- ace styles -->
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+
+<!--[if lte IE 9]>
+	<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript"> var ctx = "${ctx}";</script>
+</head>
+
+<body class="login-layout">
+<div class="main-container">
+	<div class="main-content">
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="login-container">
+					<div class="center">
+						<h1>
+							<i class="ace-icon fa fa-leaf green"></i>
+							<span class="red">FinalCMS</span>
+							<span class="white" id="id-text2">Application</span>
+						</h1>
+						<h4 class="blue" id="id-company-text">&copy; My Company</h4>
+					</div>
+					<div class="space-6"></div>
+
+					<div class="position-relative">
+						<div id="signup-box" class="signup-box widget-box no-border visible">
+							<div class="widget-body">
+								<div class="widget-main">
+									<h4 id="_msg" class="header blue lighter bigger">
+										<i class="ace-icon fa fa-users blue"></i>
+										<?if(error!"" == ""){?>
+										<b>新用户注册</b>
+										<?}else{?>
+										<b class="red"> ${error!""} </b>
+										<?}?>
+									</h4>
+									<div class="space-6"></div>
+									<form id="regist" action="${ctx}/admin/account/doRegist" method="post">
+									<form>
+										<fieldset>
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<input type="text" name="accountEntity.login_name" id="login_name" class="form-control" placeholder="登录名" autocomplete="off"/>
+													<i class="ace-icon fa fa-user"></i>
+												</span>
+											</label>
+
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<input type="password" name="accountEntity.passwd" id="passwd" class="form-control" placeholder="密码" />
+													<i class="ace-icon fa fa-lock"></i>
+												</span>
+											</label>
+
+											<label class="block clearfix">
+												<span class="block input-icon input-icon-right">
+													<input type="password" name="repass" id="repass" class="form-control" placeholder="重复密码" />
+													<i class="ace-icon fa fa-retweet"></i>
+												</span>
+											</label>
+
+											<label class="block">
+												<input type="checkbox" id="accept" class="ace" />
+												<span class="lbl">
+													接受
+													<a href="#">用户协议</a>
+												</span>
+											</label>
+
+											<div class="space-24"></div>
+
+											<div class="clearfix">
+												<a href="javascript:history.back(-1)"  class="width-30 pull-left btn btn-sm">
+													<i class="ace-icon fa fa-arrow-left icon-on-left"></i>
+													<span class="bigger-110">Back</span>
+												</a>
+												<button type="button" id="regBtn" class="width-65 pull-right btn btn-sm btn-success">
+													<span class="bigger-110">Register</span>
+													<i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+												</button>
+											</div>
+										</fieldset>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.position-relative -->
+				</div>
+			</div><!-- /.col -->
+		</div><!-- /.row -->
+	</div><!-- /.main-content -->
+</div><!-- /.main-container -->
+
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/jquery-ui.min.js"></script>	
+<script type="text/javascript" src="${ctx}/js/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/common.js"></script>
+</body>
+</html>

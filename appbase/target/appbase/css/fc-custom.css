@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+.not-blank {
+	color:red;
+}
+.input-icon > .ace-icon{
+	line-height: 40px;
+}
+
+form .verify-code-label {
+    width: 50%;
+}
+
+.verify-span{
+	float: right;
+    height: 30px;
+    line-height: 30px;
+}
+
+.verify-span img{
+ 	width: 80px;
+ 	height: 30px;
+    right: 30px;
+    position: relative;
+}
+
+.verify-span span{
+	left: -15px;
+	display: inline;
+    visibility: hidden;
+}
+
+div.table_page {
+	border:1px;padding:5px 1px;left: 0;richness: 0;
+}
+table.table_page {margin-bottom: 0;}
+.friendlink_logo{width: 180px; height: 100px; min-width: 180px; min-height: 100px;}
+.help-padding{padding-left:10px;}

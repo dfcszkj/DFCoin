@@ -1,0 +1,129 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+    <script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />-->
+    <!--<![endif]&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />-->
+    <!--[if lte IE 8]>
+    <script src="${ctx}/js/html5shiv.js"></script>
+    <script src="${ctx}/js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .row{background: none !important;}
+        .pagination{float: right;}
+    </style>
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />-->
+    <![endif]-->
+</head>
+<body><?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+
+<!--我的账号结束-->
+            <!--留言表单开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="images/dian_tab6.png" /><span>在线留言</span></div>
+                </div>
+                <div class="w90">
+                    <form action="/msg/save" method="post" id="saveForm">
+                        <div class="tab_ul">
+                            <ul>
+                                <li class="li1"><font class="fontred">*&nbsp;</font>留言类型：</li>
+                                <li class="li2">
+                                    <div class="selred" style="width:91%;">
+                                        <select name="msgEntity.type">
+                                            <?for(ff in typeList!){?>
+                                            <option value="${ff.id!}">${ff.name}</option>
+                                            <?}?>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>留言标题：</li><li class="li2"><input type="text"  id="title" name="msgEntity.title"  value="${msgEntity.title!}" class="inptex" placeholder="请输入留言标题" style="width:90%;"></li></ul>
+                            <ul>
+                                <li class="li1"><font class="fontred">*&nbsp;</font>留言内容：</li>
+                                <li class="li2">
+                                    <textarea  class="inparea"  style="width:90%; height:60px;" placeholder="请输入留言内容" id="content" name="msgEntity.content" value="${msgEntity.content!}"></textarea>
+                                </li>
+                            </ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="leaveBtn">确认留言</a></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--留言表单结束-->
+            <!--留言记录开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="images/dian_tab6.png" /><span>留言记录</span></div>
+                </div>
+                <div class="w96">
+                    <? if(exist("page") && page != null){ ?>
+                    <?for(ff in page.list!){?>
+                    <div class="gonggao">
+                        <div class="w100"><div class="ggbt"><font class="fontgr">【 <?for(t in typeList!){?> <?if(t.id==ff.type) {?>${t.name!}<?}?> <?}?>】</font>${ff.title!}<font class="fontggsj">&nbsp;&nbsp;16-05-02</font></div></div>
+                        <div class="ggjj">
+                            <div class="w100"><div class="wtle">问</div><div class="wtri">${ff.content!}</div></div>
+                            <div class="w100" <?if(ff.backcontent==null) {?> style='display:none'<?}?>><div class="wtle2">答</div><div class="wtri">${ff.backcontent!}</div></div>
+                        </div>
+                    </div>
+                    <?}?>
+
+                    <? } ?>
+                </div>
+                <!--分页开始-->
+                <div class="tabend">
+                    <div class="fy">
+                        <form action="/user/msg" method="post" id="frm">
+                        <#pagination page="${page!}" formId="frm" />
+                            </form>
+                    </div>
+                </div>
+                <!--分页结束-->
+            </div>
+            <!--留言记录结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+
+<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#leaveBtn").click(function () {
+            subAdd();
+        });
+    })
+
+    function subAdd(){
+        var title=$("#title").val();
+        var content=$("#content").val();
+        if(title.length==0) {
+            showErr('请输入标题');
+            return false;
+        }else if(content.length==0)
+        {
+            showErr('请输入内容');
+            return false;
+        }
+        $("#saveForm").submit();
+
+    }
+</script>
+</html>

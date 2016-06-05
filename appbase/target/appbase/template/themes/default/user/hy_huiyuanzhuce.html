@@ -1,0 +1,169 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+    <script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="${ctx}/components/fileinput/css/fileinput.css" />
+    <style type="text/css">
+        .hidden-xs{
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+<?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+            <!--会员注册开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>会员注册</span></div>
+                </div>
+                <div class="w90">
+                    <form action="/user/doRegist" method="post" id="formSub"  enctype="multipart/form-data" >
+                        <?if(!isEmpty(error)) {?><p class="error_tip">${error}</p><?}?>
+                        <div class="tab_ul">
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>推荐人账号：</li><li class="li2"><input type="text" class="inptex"  name="tui_name" id="zhuanZhangHao"  placeholder="请输入推荐人账号" style="width:90%;"><!--失去光标时绑定账号用户名、账号姓名--></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>推荐人姓名：</li><li class="li2"><span id="username"></span><font style="color:red;line-height: 30px; padding-left: 50px;">不填则默认本人为推荐人</font></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>注册用户名：</li><li class="li2"><input name="username" value="${username!}" id="login_name" type="text" class="inptex" placeholder="以字母开头，包括字母和数字，6至16位" style="width:90%;"><!--失去光标时进行验证用户是否已存在--></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>姓名：</li><li class="li2"><input name="truename" value="${truename!}" id="truename"  type="text" class="inptex" placeholder="请输入姓名，务必确保真实有效" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>身份证号：</li><li class="li2"><input name="card_id" value="${card_id!}" id="card_id" type="text" class="inptex" placeholder="请输入身份证号，务必确保真实有效" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>手机号：</li><li class="li2"><input type="text" name="phone" value="${phone!}" id="phone" class="inptex" placeholder="请输入手机号" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>密码：</li><li class="li2"><input type="password" value="${password!}" name="password" id="password" class="inptex" placeholder="请输入您的密码，数字、字母或者下划线，区分大小写，至少6位" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>确认密码：</li><li class="li2"><input type="password" id="repwd" value="${repwd!}" class="inptex" placeholder="请再次输入您的密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>推广图片：</li><li class="li2">
+                                <input type="file" id="icon" name="icon" class="projectfile"  value="${icon!}"/>
+                            </li></ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="regBtn" onclick="checkForm()">注册</a></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--会员注册结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script type="text/javascript" src="${ctx}/components/fileinput/js/fileinput.js"></script>
+<script type="text/javascript" src="${ctx}/components/fileinput/js/fileinput_locale_zh.js"></script>
+<script>
+    var userCheck=false;
+    $(function () {
+        $(document).keypress(function(e) {
+            // 回车键事件
+            if(e.which == 13) {
+                $("#regBtn").click();
+            }
+        });
+
+        $("#zhuanZhangHao").keyup(function(){
+            zhanghaoChange();
+        }).change(function(){
+            zhanghaoChange();
+        });
+
+        projectfileoptions :
+// 文件上传框
+                $('input[class=projectfile]').each(function() {
+                    var imageurl = $(this).attr("value");
+                    if (imageurl) {
+                        var op = $.extend({
+                            initialPreview : [ // 预览图片的设置
+                                "<img src='" + imageurl + "' class='file-preview-image'>", ]
+                        }, {
+                            showUpload : false,
+                            showRemove : false,
+                            language : 'zh',
+                            allowedPreviewTypes : [ 'image' ],
+                            allowedFileExtensions : [ 'jpg', 'png', 'gif' ],
+                            maxFileSize : 2000,
+                        });
+                        $(this).fileinput(op);
+                    } else {
+                        $(this).fileinput({
+                            showUpload : false,
+                            showRemove : false,
+                            language : 'zh',
+                            allowedPreviewTypes : [ 'image' ],
+                            allowedFileExtensions : [ 'jpg', 'png', 'gif' ],
+                            maxFileSize : 2000,
+                        });
+                    }
+                });
+    })
+
+    function checkForm(){
+        var username = $.trim($("#login_name").val());
+        var passwd = $.trim($("#password").val());
+        var truename= $.trim($("#truename").val());
+        var card_id= $.trim($("#card_id").val());
+        var phone= $.trim($("#phone").val());
+        var repwd= $.trim($("#repwd").val());
+        var regCard = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        var regLoginName=/[a-zA-Z][a-zA-Z0-9]{5,15}/;
+        var regPhone = /1\d{10}/;
+        if(username.length == 0) {
+            showErr("用户名不能为空");
+            return false;
+        }if(regLoginName.test(username) === false) {
+            showErr("用户名格式有误");
+            return false;
+        }else if(!userCheck&&$("#zhuanZhangHao").val().length!=0) {
+            showErr("推荐人不存在");
+            return false;
+        } else if(truename.length == 0) {
+            showErr("姓名不能为空");
+            return false;
+        }else if(passwd.length == 0) {
+            showErr("密码不能为空");
+            return false;
+        }else if(passwd.length <6||passwd.length>25) {
+            showErr("密码长度必须在6-25之间");
+            return false;
+        }else if(card_id.length == 0) {
+            showErr("身份证号码不能为空");
+            return false;
+        }else if(regCard.test(card_id) === false) {
+            showErr("身份证号码格式有误");
+            return false;
+        }else if(phone.length == 0) {
+            showErr("手机号码不能为空");
+            return false;
+        }else if(regPhone.test(phone) === false) {
+            showErr("手机号码格式有误");
+            return false;
+        }else if(repwd!=passwd) {
+            showErr("两次密码不一致");
+            return false;
+        }else if($.trim($("#icon").val()).length == 0) {
+            alert("请选择推广图片上传");
+            return false;
+        }
+
+        $("#formSub").submit();
+    }
+    function zhanghaoChange(){
+        userCheck=false;
+        gravel.ajax("/ajax/getZhang",{"userid":$("#zhuanZhangHao").val(),"rand":Math.random()}, function (obj) {
+            if(obj.result){
+                $("#username").html(obj.data.truename);
+                userCheck=true;
+            }else{
+                $("#username").html("");
+                userCheck=false;
+            }
+        },function(error){
+            $("#username").html("");
+            userCheck=false;
+        });
+    }
+</script>
+</html>

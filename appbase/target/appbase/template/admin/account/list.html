@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>用户管理 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">var ctx = "${ctx}";</script>
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"account"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li><i class="ace-icon fa fa-home home-icon"></i> <a
+				href="${ctx}/admin/account/dashboard">首页</a></li>
+			<li class="active">用户管理</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>用户列表</h1>
+		</div>
+		<!-- /.page-header -->
+		<div class="row">
+			<?if(!isEmpty(error)) {?>${error}<?}?>
+			<div class="table-container col-xs-12">
+				<div class="form-group col-xs-2">
+					<input type="button" value="删除" id="deleteBtn" class="form-control input-sm " />
+				</div>
+				<table id="content-table" class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th class="center" width="5%">
+								<label class="position-relative">
+									<input type="checkbox" class="ace table_check" />
+									<span class="lbl"></span>
+								</label>
+							</th>
+						   	<th class="center" width="15%">登录名</th>
+						   	<th class="center" width="25%">邮箱</th>	
+						   	<th class="center" width="10%">角色</th>
+						   	<th class="center" width="15%">创建时间</th>
+						   	<th class="center" width="15%">最后登录时间</th>	
+						   	<th class="center" width="15%">操作</th>
+						</tr>
+					</thead>
+					<tbody class="colmun-data">
+						<?for (a in page.list!) {?>
+						<tr>
+							<td class="center" width="5%">
+								<label class="position-relative">
+									<input type="checkbox" class="ace table_check" name="ids" value="${a.id!}" />
+									<span class="lbl"></span>
+								</label>
+							</td>
+							<td class="center">${a.login_name!}</td>
+							<td class="center">${a.email!}</td>
+							<td class="center">${roleMap[a.role!]}</td>
+							<td class="center">${a.create_time!}</td>
+							<td class="center">${a.login_time!}</td>
+							<td class="center">
+								<div class="action-buttons">
+									<a href="${ctx}/admin/account/edit?id=${a.id!}" class="green edit-content">
+										 <i class="ace-icon fa fa-pencil bigger-130" title="编辑"></i>
+									</a> 
+
+								</div>
+							</td>
+						</tr>
+						<?}?>
+					</tbody>
+				</table>
+			</div>
+	  </div>
+	</div>
+</div>
+
+<?include("../../inc/footer.html"){}?>
+
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+	$('#content-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+		var th_checked = this.checked;//checkbox inside "TH" table header
+		$(this).closest('table').find('tbody > tr').each(function(){
+			if(th_checked) 
+				$(this).find('input[type=checkbox]').get(0).checked = true;
+			else 
+				$(this).find('input[type=checkbox]').get(0).checked = false; 
+		});
+	});
+	$("#deleteBtn").click(function(){
+		var ckids = "";
+		$("input:checked[name='ids']").each(function(){
+			if($.trim($(this).val()).length > 0)
+				ckids += $.trim($(this).val())+",";
+    	});
+		if($.trim(ckids).length > 0) {
+			location.href = "${ctx}/admin/account/delete?id=" + ckids;
+		}
+	});
+});
+</script>
+</body>
+</html>

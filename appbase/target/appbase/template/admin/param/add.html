@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>添加参数 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"param_add"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li><i class="ace-icon fa fa-home home-icon"></i> 
+				<a href="${ctx}/admin/account/dashboard">首页</a></li>
+			<li class="active">参数管理</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>参数管理
+			<small><i class="ace-icon fa fa-angle-double-right"></i> <?if(isEmpty(param)) {?>添加<?}else{?>编辑<?}?></small>
+			</h1>
+		</div>
+		<div class="row">
+			<?if(!isEmpty(error)) {?>${error}<?}?>
+			<div class="col-xs-12">
+		  		<form action="${ctx}/admin/param/save" class="form-horizontal" method="POST" id="frm">
+		  			<?if(!isEmpty(param)){?>
+		  			<input type="hidden" name="paramEntity.id" value="${param.id}"/>
+		  			<?}?>
+				  	<div class="form-group">
+						<label class="col-sm-3 control-label" for="code"><span class="not-blank">*</span>参数代码</label>
+						<div class="col-sm-9">
+							<input type="text" id="code" name="paramEntity.code" value="${param.code!}" placeholder="参数代码" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="value"><span class="not-blank">*</span>参数值</label>
+						<div class="col-sm-9">
+							<input type="text" id="value" name="paramEntity.value" value="${param.value!}" placeholder="参数值" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="type">参数类型</label>
+						<div class="col-sm-5">
+							<select class="form-control m-b" name="paramEntity.type" id="type">
+								<?for(t in paramTypeList!) {?>
+								<option value="${t.code!}" <?if(t.code! == param.type!){?>selected<?}?>>${t.name!}</option>
+								<?}?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="desc">描述</label>
+						<div class="col-sm-9">
+							<input type="text" id="desc" name="paramEntity.desc" value="${param.desc!}" placeholder="描述" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-2 col-md-5">
+							<a class="btn btn-sm pull-left" href="${ctx}/admin/param">
+								<i class="ace-icon fa fa-arrow-left"></i> 返回
+							</a>
+							<button class="btn btn-info pull-right" type="button" id="submitBtn">
+								<i class="ace-icon fa fa-check bigger-110"></i> 提交
+							</button>
+						</div>
+					</div>
+				 </form>								
+			</div> <!-- end col-xs-12 -->
+		</div><!-- end row -->
+	</div>
+</div>
+<?include("../../inc/footer.html"){}?>
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc-extra.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+	$("#submitBtn").click(function(){
+		if($.trim($("#code").val()).length == 0) {
+			alert("参数代码不能为空");
+			return false;
+		}
+		if($.trim($("#value").val()).length == 0) {
+			alert("参数值不能为空");
+			return false;
+		}
+		<?if(isEmpty(param)) {?>
+		$("#frm").attr("action", "${ctx}/admin/param/save");
+		<?}else{?>
+		$("#frm").attr("action", "${ctx}/admin/param/doEdit");
+		<?}?>
+		$("#frm").submit();
+	});
+});
+</script>
+</body>
+</html>

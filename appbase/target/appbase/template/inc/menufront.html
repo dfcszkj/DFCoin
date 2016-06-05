@@ -1,0 +1,156 @@
+<style>
+	.tabtop{
+		line-height: 36px;
+		padding-left: 10px;
+	}
+</style>
+<div class="top">
+	<div class="biaozhi"><img src="${ctx}${system.logo!}" /></div>
+	<div class="topr">
+		<!--窄屏菜单开始-->
+		<div class="toprgdk">
+			<div class="toprgd" onclick="toprtanc.style.display='block'"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_genduo.png" /></div>
+			<div class="toprgdreli">
+				<div class="toprtanc" id="toprtanc" style="display: none; z-index: auto;">
+					<a class="atoptc2" onclick="toprtanc.style.display='none'">×</a>
+					<a class="atoptc1" href="/user">管理首页</a>
+					<a class="atoptc1">会员管理</a>
+					<a class="atoptc2" href="/user/regist">会员注册</a>
+					<a class="atoptc2" href="/user/jihuo">账号激活</a>
+					<a class="atoptc2"  href="/user/tuiList" >会员列表</a>
+					<a class="atoptc1" >账务管理</a>
+					<a class="atoptc2"  href="/user/meirishouyi">每日收益</a>
+					<a class="atoptc2" href="/user/zhanghumingxi" >账户明细</a>
+					<a class="atoptc2" href="/user/zhuanBi">转币</a>
+					<a class="atoptc2" href="/user/goumaibi">购买币</a>
+					<a href="/user/chuShouBi" class="atoptc2">出售币</a>
+					<a href="/user/DFCZhuankuangji" class="atoptc2">DF转矿机激活币</a>
+					<a href="/user/tixian" class="atoptc2">现金钱包提现</a>
+					<a class="atoptc1">我的账户</a>
+					<a href="/user/profile" class="atoptc2">个人资料</a>
+					<a href="/user/passManage" class="atoptc2">密码管理</a>
+					<a class="atoptc1">信息管理</a>
+					<a href="/gonggao" class="atoptc2">公告</a>
+					<a href="/msg" class="atoptc2">在线留言</a>
+				</div>
+			</div>
+		</div>
+		<!--窄屏菜单结束-->
+		<!--宽屏显示开始-->
+		<div class="toprhid">
+			<a class="tuichu" href="/user/logout">退出</a>
+			<div class="toprip">${user.login_ip!}</div>
+			<div class="toprshij">${user.login_time,'yyyy-MM-dd HH:mm:ss'}</div>
+			<div class="toprsm">最后登录</div>
+		</div>
+		<!--宽屏显示结束-->
+		<!--用户名开始-->
+		<div class="topru">
+			<div class="toptx"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_touxiang.png" /></div>
+			<div class="topna">${user.login_name}</div>
+		</div>
+		<!--用户名结束-->
+	</div>
+</div>
+<!--顶部结束-->
+<!--左侧开始-->
+<div class="m_left">
+	<a href="/user" class="adhle2"><div class="ml1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_le01.png" /><br />管理首页</div></a>
+
+	<div class="adhle" onmouseover="mltc1.style.display='block'" onmouseout="mltc1.style.display='none'">
+		<div class="mlrel">
+			<div class="mltc" id="mltc1" style="display: none;">
+				<a href="/user/regist" class="amltc" id="toRegist">会员注册</a>
+				<a href="/user/jihuo" class="amltc">账号激活</a>
+				<a href="/user/tuiList" class="amltc">会员列表</a>
+			</div>
+		</div>
+		<div class="ml1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_le02.png" /><br />会员管理</div>
+	</div>
+
+	<div class="adhle" onmouseover="mltc2.style.display='block'" onmouseout="mltc2.style.display='none'">
+		<div class="mlrel">
+			<div class="mltc" id="mltc2" style="display: none;">
+				<a href="/user/meirishouyi" class="amltc">每日收益</a>
+				<a href="/user/zhanghumingxi" class="amltc">账户明细</a>
+				<a href="/user/zhuanBi" class="amltc">转币</a>
+				<a href="/user/goumaibi" class="amltc">购买币</a>
+				<a href="/user/chuShouBi" class="amltc">出售币</a>
+				<a href="/user/DFCZhuankuangji" class="amltc">DF转矿机激活币</a>
+				<a href="/user/tixian" class="amltc">现金钱包提现</a>
+				<!--<a href="cw_zhanghaoshoubi.html" class="amltc">账号收币</a>-->
+			</div>
+		</div>
+		<div class="ml1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_le03.png" /><br />账务管理</div>
+	</div>
+
+	<div class="adhle" onmouseover="mltc3.style.display='block'" onmouseout="mltc3.style.display='none'">
+		<div class="mlrel">
+			<div class="mltc" id="mltc3" style="display: none;">
+				<a href="/user/profile" class="amltc">个人资料</a>
+				<a href="/user/passManage" class="amltc">密码管理</a>
+			</div>
+		</div>
+		<div class="ml1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_le04.png" /><br />我的账户</div>
+	</div>
+
+	<div class="adhle" onmouseover="mltc4.style.display='block'" onmouseout="mltc4.style.display='none'">
+		<div class="mlrel">
+			<div class="mltc" id="mltc4" style="display: none;">
+				<a href="/gonggao" class="amltc">公告</a>
+				<a href="/msg" class="amltc">在线留言</a>
+			</div>
+		</div>
+		<div class="ml1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_le05.png" /><br />信息管理</div>
+	</div>
+
+</div>
+<!--左侧结束-->
+<!--右侧开始-->
+<div class="m_right">
+	<div class="r100">
+		<!--我的账号开始-->
+		<div class="zhanghao">
+			<div class="zh"><div class="zh1">我的账号</div><div class="zh2">点击可切换账号</div></div>
+			<div class="zh3">
+				<? if(exist("myUserList") && myUserList != null){ ?>
+				<?for(ff in myUserList!){?>
+				<? if(ff.login_name==user.login_name){ ?>
+					<a class="zh4">${user.login_name!}</a>
+				<? }else{ ?>
+				<a href="/user/changeUser?name=${ff.login_name!}" class="zh5">${ff.login_name!}</a>
+
+				<? }?>
+				<?}?>
+				<? } ?>
+				<!--<a href="#" class="zh5">ALIM01</a>-->
+				<!--<a href="#" class="zh5">ALIM02</a>-->
+				<!--<a href="#" class="zh5">ALIM03</a>-->
+				<!--<a href="#" class="zh5">ALIM04</a>-->
+				<!--<a href="#" class="zh5">ALIM05</a>-->
+			</div>
+		</div>
+		<div class="qianbao">
+			<div class="qbk">
+				<div class="qb"><div class="qb1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_qb4.png" alt="" /><span>DF币</span></div><div class="qb2">${user.b1!0}<font class="fontqb">&nbsp;&nbsp;枚</font></div></div>
+				<div class="qb"><div class="qb1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_qb2.png" alt="" /><span>矿机激活币</span></div><div class="qb2">${user.b2!0}<font class="fontqb">&nbsp;&nbsp;枚</font></div></div>
+				<div class="qb"><div class="qb1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_qb1.png" alt="" /><span>现金钱包</span></div><div class="qb2">${user.b3!0}<font class="fontqb">&nbsp;&nbsp;元</font></div></div>
+				<div class="qb"><div class="qb1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_qb3.png" alt="" /><span>团队人数</span></div><div class="qb2">${user.tui_count!0-1}<font class="fontqb">&nbsp;&nbsp;人</font></div></div>
+			</div>
+		</div>
+		<!--我的账号结束-->
+
+		<script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+		<script src="${ctx}/layer/layer.js"></script>
+		<script>
+			$("#toRegist").click(function () {
+				var state=${user.state!1};
+				if(state==1){
+					layer.msg("只有达到报单中心才能注册哦!");
+					return false;
+				}
+			})
+			<?if(!isEmpty(error)) {?>
+				layer.alert('${error}')
+			<?}?>
+		</script>

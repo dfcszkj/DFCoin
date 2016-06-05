@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>${system.name}</title>
+	<script src="${ctx}/layer/jquery.min.js"></script>
+	<script src="${ctx}/js/common.js"></script>
+	<script src="${ctx}/layer/layer.js"></script>
+	<script src="${ctx}/js/crypto.js"></script>
+<link href="${ctx}/css/css_ad.css" rel="stylesheet" type="text/css">
+<![endif]-->
+</head>
+
+<body class="login-layout">
+<!--顶部开始-->
+<div class="lo_top">
+	<div class="w_1200">
+		<div class="biaozhi"><a href="#"><img src="${ctx}/images/biaozhi.png"/></a><span>${system.name}</span></div>
+		<div class="bangzhu"><a href="#">德丰币首页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">系统帮助</a></div>
+	</div>
+</div>
+<!--顶部结束-->
+<!--登录开始-->
+<form id="loginForm" action="${ctx}/admin/account/doLogin">
+<div class="lo_dlk">
+	<div class="w_1200">
+		<div class="lo_denluk">
+			<form>
+				<div class="lo_denluk2">
+					<div class="lo_denlukbt">账号登录&nbsp;-&nbsp;企业用户</div>
+					<div class="lo_denluklr">登录名：</div>
+					<div class="lo_denluklr2"><input type="text" id="login_name" placeholder="请输入登录名" class="inptex" style="width:95%"></div>
+					<div class="lo_denluklr">密码：</div>
+					<div class="lo_denluklr2"><input type="password" id="passwd" placeholder="请输入密码" class="inptex" style="width:95%"></div>
+					<div class="lo_denluklr">验证码：</div>
+					<div class="lo_denluklr2">
+						<div class="lo_yanzheng"><input type="text" id="verify-code-input" placeholder="右侧验证码" class="inptex" style="width:95%"></div>
+						<div class="lo_yanzheng02"><img src="${ctx}/captcha" alt="" id="codeImg"/></div>
+						<div class="lo_yanzheng02"><a href="#">换一组</a></div>
+					</div>
+					<div class="lo_denluklr"><input type="button" value="登录" id="loginBtn" class="butlog"></div>
+					<div class="lo_denluklr"><a href="register.html">新用户注册</a> ｜ <a href="zhaohui.html">忘记密码</a></div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</form>
+<!--登录结束-->
+<!--版权开始-->
+<div class="w_1200">
+	<div class="lo_copy">
+		<div class="fg">版权所有：${system.copyright}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.defengbi.cn">${system.weburl}</a>&nbsp;&nbsp;|&nbsp;&nbsp;Tel：${system.tel}</div>
+		<div class="fg_r"><a href="#">关于我们</a>&nbsp;&nbsp;｜&nbsp;&nbsp;<a href="#">在线客服</a></div>
+	</div>
+</div>
+<script type="text/javascript">
+jQuery(function($) {
+	$("#verify-img,#codeImg").click(reloadVerifyImg);
+
+	$(document).keypress(function(e) {
+	    // 回车键事件  
+       if(e.which == 13) {  
+    	   $("#loginBtn").click();
+	   }
+	}); 
+	
+	//登录
+	$("#loginBtn").click(function(){
+		var username = $.trim($("#login_name").val());
+		var passwd = $.trim($("#passwd").val());
+		var vcode = $.trim($("#verify-code-input").val());
+		if(username.length == 0) {
+			showErr("用户名不能为空");
+			return false;
+		} else if(passwd.length == 0) {
+			showErr("密码不能为空");
+			return false;
+		} else if(vcode.length != 4) {
+			showErr("验证码错误");
+			return false;
+		}
+		$("#passwd").val(CryptoJS.MD5(passwd+"{"+username+"}"));
+		$("#loginForm").attr("action", "${ctx}/admin/account/doLogin");
+		$("#loginForm").submit();
+	});
+});
+function  reloadVerifyImg(){
+	$("#codeImg").attr("src","${ctx}/captcha?rand="+Math.random());
+}
+</script>
+</body>
+</html>

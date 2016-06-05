@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+	
+	<!-- <rule>
+    	<name>Domain Name Check</name>
+        <condition name="host" operator="notequal">www.yispider.com</condition>
+        <condition name="host" operator="notequal">m.yispider.com</condition>
+        <from>^/(.*)</from>
+        <to type="permanent-redirect">http://www.yispider.com/$1</to>
+   	</rule> -->
+    	
+	<!-- 移除jsessionid -->
+	<outbound-rule encodefirst="true">
+		<from>^(.*);jsessionid=.*$</from>
+		<to>$1</to>
+	</outbound-rule>
+	
+	<!-- 文章列表页 -->
+	<!-- 伪静态转实际地址 -->
+	<rule>
+		<from>^/(\w+)\.html$</from>
+        <to last="true">/article/list?alias=$1</to>
+	</rule>
+	<!-- 实际地址转伪静态 -->
+	<outbound-rule>
+		<from>^/article/list?alias=(\w+)(;jsessionid=.*)?$</from>
+		<to last="true">/$1\.html</to>
+	</outbound-rule>
+	
+	<rule>
+		<from>^/(\w+)_(\d+)\.html$</from>
+        <to last="true">/article/list?alias=$1&amp;pageNumber=$2</to>
+	</rule>
+	<outbound-rule>
+		<from>^/article/list?alias=(\w+)&amp;pageNumber=(\d+)(;jsessionid=.*)?$</from>
+		<to last="true">/$1_$2\.html</to>
+	</outbound-rule>
+	
+	<!-- 文章内容页 -->
+	<rule>
+		<from>^/html/show_(\d+)\.html$</from>
+        <to last="true">/article/show?id=$1</to>
+	</rule>
+	<outbound-rule>
+		<from>^/article/show?id=(\d+)(;jsessionid=.*)?$</from>
+		<to last="true">/html/show_$1\.html</to>
+	</outbound-rule>
+
+	<rule>
+		<from>^/news/show_(\d+)\.html$</from>
+		<to last="true">/news/detail?id=$1</to>
+	</rule>
+	<outbound-rule>
+		<from>^/news/detail?id=(\d+)(;jsessionid=.*)?$</from>
+		<to last="true">/news/show_$1\.html</to>
+	</outbound-rule>
+
+
+	<!-- <outbound-rule encodefirst="true">
+		<from>^(.*);jsessionid=.*$</from>
+		<to>$1</to>
+	</outbound-rule>
+
+	<rule>
+		<from>^/login\.html$</from>
+		<to last="true">/admin/login</to>
+	</rule>
+	<outbound-rule>
+		<from>^/admin/login(;jsessionid=.*)?$</from>
+		<to last="true">/login\.html</to>
+	</outbound-rule>
+	
+	<rule>
+		<from>^/ff\.html$</from>
+		<to last="true">/admin/friendlink</to>
+	</rule>
+	<outbound-rule>
+		<from>^/admin/friendlink(;jsessionid=.*)?$</from>
+		<to last="true">/ff\.html</to>
+	</outbound-rule> -->
+	
+ 	<!--
+	<rule>
+		<name>Domain Name Check</name>
+		<condition name="host" operator="notequal">www.henniu110.com</condition>
+		<condition name="host" operator="notequal">m.henniu110.com</condition>
+		<from>^/(.*)</from>
+		<to type="permanent-redirect">http://www.henniu110.com/$1</to>
+	</rule>
+
+	<rule>
+		<name>USER AGENT Check</name>
+		<condition name="host" operator="notequal">m.henniu110.com</condition>
+		<condition name="user-agent">(android|blackberry|googlebot-mobile|iemobile|iphone|ipod|opera mobile)</condition>
+		<from>^/(.*)</from>
+		<to type="redirect">http://m.henniu110.com/$1</to>
+	</rule>
+
+    EXAMPLES Redirect one url
+    <rule>
+        <from>/some/old/page.html</from>
+        <to type="redirect">/very/new/page.html</to>
+    </rule>
+    Redirect a directory
+    <rule>
+        <from>/some/olddir/(.*)</from>
+        <to type="redirect">/very/newdir/$1</to>
+    </rule>
+    Clean
+    a url
+    <rule>
+        <from>/products/([0-9]+)</from>
+        <to>/products/index.jsp?product_id=$1</to>
+    </rule>
+    eg, /products/1234 will be
+    passed on to /products/index.jsp?product_id=1234 without the user noticing. Browser detection
+    <rule>
+        <condition name="user-agent">Mozilla/[1-4]</condition>
+        <from>/some/page.html</from>
+        <to>/some/page-for-old-browsers.html</to>
+    </rule>
+    eg, will pass the request for /some/page.html
+    on to /some/page-for-old-browsers.html only for older browsers whose user agent srtings match Mozilla/1, Mozilla/2,
+    Mozilla/3
+    or Mozilla/4. Centralised browser detection
+    <rule>
+        <condition name="user-agent">Mozilla/[1-4]</condition>
+        <set type="request" name="browser">moz</set>
+    </rule>
+    eg, all requests will be checked against the condition and if matched request.setAttribute("browser",
+    "moz") will be called. 
+
+ 	-->
+
+</urlrewrite>

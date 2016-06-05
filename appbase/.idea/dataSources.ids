@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="jdbc" uuid="bfaaface-4b3d-415f-b5ea-10a7eb736099">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="huobi"/>
+      <table id="2" parent="1" name="f_account"/>
+      <table id="3" parent="1" name="f_news"/>
+      <table id="4" parent="1" name="f_site"/>
+      <column id="5" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(10)</data-type>
+      </column>
+      <column id="6" parent="2" name="login_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="7" parent="2" name="passwd">
+        <data-type>varchar(32)</data-type>
+      </column>
+      <column id="8" parent="2" name="role">
+        <comment>admin, user</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="9" parent="2" name="phone">
+        <data-type>varchar(25)</data-type>
+      </column>
+      <column id="10" parent="2" name="create_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="11" parent="2" name="login_time">
+        <comment>last login time</comment>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="12" parent="2" name="state">
+        <comment>1:normal
+0:lock</comment>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="13" parent="2" name="login_ip">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="14" parent="2" name="login_address">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="15" parent="2" name="logincount">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="2" name="tui_id">
+        <data-type>int(10)</data-type>
+      </column>
+      <column id="17" parent="2" name="truename">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="18" parent="2" name="card_id">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="19" parent="2" name="b1">
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="20" parent="2" name="b2">
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="21" parent="2" name="b3">
+        <data-type>bigint(12)</data-type>
+      </column>
+      <column id="22" parent="2" name="level">
+        <data-type>int(5)</data-type>
+      </column>
+      <column id="23" parent="2" name="secondPass">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="24" parent="2" name="safePass">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <key id="25" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="26" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="27" parent="3" name="title">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="28" parent="3" name="authorid">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="29" parent="3" name="content">
+        <data-type>text</data-type>
+      </column>
+      <column id="30" parent="3" name="create_time">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="31" parent="3" name="edit_time">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="32" parent="3" name="cate_id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="33" parent="3" name="state">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="34" parent="3" name="clicks">
+        <mandatory>1</mandatory>
+        <data-type>bigint(11)</data-type>
+      </column>
+      <column id="35" parent="3" name="icon">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="36" parent="3" name="type">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="37" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="38" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="39" parent="4" name="theme">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <key id="40" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

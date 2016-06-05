@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>发布内容 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+	<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"post_article"}){}?>
+<div class="main-content">
+<div class="breadcrumbs" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li><i class="ace-icon fa fa-home home-icon"></i> <a href="${ctx}/admin/account/dashboard">首页</a>
+		</li>
+		<li class="active"><?if(isEmpty(p)){?>发布文章<?} else {?>编辑文章<?}?></li>
+	</ul>
+</div>
+
+<div class="page-content">
+	<div class="page-header">
+		<h1><?if(isEmpty(p)){?>发布文章<?} else {?>编辑文章<?}?> </h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<span class="not-blank"><?if(!isEmpty(error)) {?>${error}<?}?></span>
+			</div>
+			<form action="${ctx}/admin/post/save" method="post" id="frm" class="form-horizontal">
+				<?if(!isEmpty(p)){?>
+				<input type="hidden" name="postEntity.id" value="${p.id!}" />
+				<?}?>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="title"><span class="not-blank">*</span>标题</label>
+					<div class="col-sm-9">
+						<input type="text" id="title" name="postEntity.title" value="${p.title!}" placeholder="标题" class="col-xs-6 col-sm-6" />
+						<span id="title_msg" class="help-block help-padding"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="subtitle">副标题</label>
+					<div class="col-sm-9">
+						<input type="text" id="subtitle" name="postEntity.subtitle" value="${p.subtitle!}" placeholder="副标题" class="col-xs-6 col-sm-6" />
+						<span id="subtitle_msg" class="help-block help-padding"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="category"><span class="not-blank">*</span>栏目</label>
+					<div class="col-sm-5">
+						<select name="postEntity.category" id="category" class="form-control input-sm">
+							<?for (c in categoryList!) {?>
+							<option value="${c.id!}" <?if(p.category! == c.id!){?>selected<?}?>>${c.title!}</option>
+								<? for(c2 in c.sub!) {?>
+									<option value="${c2.id!}" <?if(p.category! == c2.id!){?>selected<?}?>>----${c2.title!}</option>
+									<? for(c3 in c2.sub!) {?>
+										<option value="${c3.id!}" <?if(p.category! == c3.id!){?>selected<?}?>>--------${c3.title!}</option>
+									<?}?>
+								<?}?>
+							<?}?>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="keywords">关键词</label>
+					<div class="col-sm-9">
+						<input type="text" id="keywords" name="postEntity.keywords" value="${p.keywords!}" placeholder="关键词" class="col-xs-6 col-sm-6" />
+						<span id="keywords_msg" class="help-block help-padding"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="intro">简介</label>
+					<div class="col-sm-9">
+						<textarea id="intro" name="postEntity.intro" placeholder="简介" class="col-xs-6 col-sm-6" >${p.intro!}</textarea>
+						<span id="intro_msg" class="help-block help-padding"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">状态</label>
+                  	<div class="col-sm-6">
+                  		<div>
+							<label>
+								<input name="postEntity.state" value="0" type="radio" class="ace" <?if(!isEmpty(p) && p.state! == 0){?>checked="checked"<?}?>/>
+								<span class="lbl"> 待审核</span>
+							</label>
+							<label>
+								<input name="postEntity.state" value="1" type="radio" class="ace" <?if(isEmpty(p) || p.state! == 1){?>checked="checked"<?}?>/>
+								<span class="lbl"> 正常发布</span>
+							</label>
+							<label>
+								<input name="postEntity.state" value="2" type="radio" class="ace" <?if(!isEmpty(p) && p.state! == 2){?>checked="checked"<?}?>/>
+								<span class="lbl"> 删除</span>
+							</label>
+						</div>
+                  	</div>
+                </div>
+                <div class="form-group">
+					<label class="col-sm-3 control-label">类型</label>
+                  	<div class="col-sm-6">
+                  		<div>
+                  			<?for (t in postTypeList!) {?>
+							<label>
+								<input name="postEntity.type" value="${t.code!}" type="radio" class="ace" <?if((isEmpty(p)&&t.code! == 'article') || (!isEmpty(p)&&p.type!'' == t.code!'')){?>checked="checked"<?}?>/>
+								<span class="lbl"> ${t.desc!}</span>
+							</label>
+							<?}?>
+						</div>
+                  	</div>
+                </div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">标志位</label>
+                  	<div class="col-sm-6">
+                  		<div>
+							<label>
+								<input name="postEntity.flag_image" value="1" type="checkbox" class="ace" <?if(!isEmpty(p) && p.flag_image! == 1 ){?>checked="checked"<?}?>/>
+								<span class="lbl"> 图片</span>
+							</label>
+							<label>
+								<input name="postEntity.flag_top" value="1" type="checkbox" class="ace" <?if(!isEmpty(p) && p.flag_top! == 1 ){?>checked="checked"<?}?>/>
+								<span class="lbl"> 首页置顶</span>
+							</label>
+							<label>
+								<input name="postEntity.flag_carousel" value="1" type="checkbox" class="ace" <?if(!isEmpty(p) && p.flag_carousel! == 1 ){?>checked="checked"<?}?>/>
+								<span class="lbl"> 轮播</span>
+							</label>
+							<label>
+								<input name="postEntity.flag_suggest" value="1" type="checkbox" class="ace" <?if(!isEmpty(p) && p.flag_suggest! == 1 ){?>checked="checked"<?}?>/>
+								<span class="lbl"> 强推</span>
+							</label>
+						</div>
+                  	</div>
+               </div>
+				<div class="form-group">
+					<input type="hidden" id="content" name="postEntity.content">
+					<script id="editor" type="text/plain" style="height: 500px;">${p.content!}</script>
+				</div>						
+				<div class="clearfix">
+					<a class="btn btn-sm pull-left" href="${ctx}/admin/post">
+						<i class="ace-icon fa fa-arrow-left"></i> 返回
+					</a>
+					<div class="col-md-offset-2 col-md-5">
+						<button class="btn btn-info pull-right" type="button" id="submitBtn">
+							<i class="ace-icon fa fa-check bigger-110"></i> 提交
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>  
+<?include("../../inc/footer.html"){}?>
+	
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<!--[if lte IE 8]>
+<script type="text/javascript" src="${ctx}/js/excanvas.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="${ctx}/js/fc-extra.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<!-- 富文本编辑器插件 -->
+<script type="text/javascript" charset="utf-8" src="${ctx}/ext/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="${ctx}/ext/ueditor/ueditor.all.min.js"> </script>
+<!--加载语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<script type="text/javascript" charset="utf-8" src="${ctx}/ext/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+//实例化编辑器
+//建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+var ue = UE.getEditor('editor');
+jQuery(function($) {
+	ue.ready(function() {
+	    //设置编辑器的内容
+	    ue.setContent('${p.content!}');
+	    //获取html内容，返回: <p>hello</p>
+	    //var html = ue.getContent();
+	    //获取纯文本内容，返回: hello
+	    //var txt = ue.getContentTxt();
+	});
+	$("#submitBtn").click(sub);
+});
+function sub() {
+	if ($.trim($("#title").val()).length == 0) {
+		alert("标题不能为空!");
+		return false;
+	}
+	if($.trim(ue.getContent()).length == 0) {
+		alert("文章内容不能为空");
+		return false;
+	}
+	$("#content").val(ue.getContent());
+	<?if(isEmpty(p)) {?>
+		$("#frm").attr("action", "${ctx}/admin/post/save");
+	<?}else{?>
+		$("#frm").attr("action", "${ctx}/admin/post/doEdit");
+	<?}?>
+	$("#frm").submit();
+}
+</script>
+</body>
+</html>

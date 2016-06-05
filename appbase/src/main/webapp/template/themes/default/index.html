@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<title>德丰币</title>
+<link href="${ctx}/template/themes/${site.theme!}/css/css_pc.css" rel="stylesheet" type="text/css">
+<link href="${ctx}/template/themes/${site.theme!}/css/lrtk.css" rel="stylesheet" type="text/css">
+<script src="${ctx}/template/themes/${site.theme!}/js/jquery.min.js"></script>
+	<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+	<script src="${ctx}/layer/layer.js"></script>
+	<script src="${ctx}/js/common.js"></script>
+
+</head>
+
+<body>
+<!--加载开始-->
+<div class="jiaz" id="jiaz">
+<div class="jiazw">正在自动转换系统语言，请稍后<br />Automatic conversion system language, please...<br />지금 자동 교환 시스템 언어, 좀 이따<br />
+  <img src="${ctx}/template/themes/${site.theme!}/images/wait.gif" alt=""/></div>
+</div>
+<script>
+$(function(){
+setTimeout('$("#jiaz").fadeOut("slow")',3000);
+})
+</script>
+<!--加载结束-->
+<!--窄屏导航开始-->
+<div class="zpdh">
+<div class="w100">
+<div class="biaozhiz"><a href="#"><img src="${ctx}/template/themes/${site.theme!}/images/biaozhi02.png" alt=""/></a></div>
+<a class="zpdhr" id="alyy">语言</a>
+<a name="aldl" class="zpdhr2" id="aldl">登录</a>
+</div>
+<div class="zpdhtc" id="tancyy">
+<div class="w100">
+	<a class="zdhtc" href="/index">中文</a>
+	<a class="zdhtc" href="/indexe">English</a>
+	<a class="zdhtc" href="/indexh">한글</a>
+</div>
+<a class="tcshouh" id="shyy"><img src="${ctx}/template/themes/${site.theme!}/images/tcshouh.png"/></a>
+</div>
+</div>
+<script>
+$(document).ready(function() {
+   $("#tancdh,#tancyy").hide(); 
+   $("#aldh").click(function(){
+	   $("#tancyy").hide();
+	   $("#tancdh").show(150);
+	   })
+   $("#alyy").click(function(){
+	   $("#tancdh").hide();
+	   $("#tancyy").show(150);
+	   })  
+   $("#shdh").click(function(){
+	   $("#tancdh").hide(150);
+	   })  
+	$("#shyy").click(function(){
+	   $("#tancyy").hide(150);
+	   })  
+});
+</script>
+<div class="tczhuce" id="tcdl">
+<div class="w100"><div class="fg_r"><div class="zcgbdw"><a class="zcgb" id="gbdl">×</a></div></div></div>
+<form>
+<div class="w90">
+<div class="zcbt">用户登录</div>
+<input type="text" class="inpdl" placeholder="请输入用户名" id="login_name1">
+<input type="password" class="inpdl" placeholder="请输入密码"  id="passwd1">
+<div class="w100"><div class="yzm1"><input type="text" class="inpdl" placeholder="请输入验证码"  id="verify-code-input1"></div>
+	<div class="yzm1"><img   id="codeImg1" src="${ctx}/captcha"/></div></div>
+</div>
+<a class="aldlu"  id="loginBtn1">登&nbsp;&nbsp;录</a>
+</form>
+</div>
+<script>
+$(document).ready(function() {
+ $("#tcdl").hide();
+       $("#aldl").click(function(){
+	   $("#tcdl").show(150);
+	   })
+ $("#gbdl").click(function(){
+	   $("#tcdl").hide(150);
+	   })
+})
+</script>
+<!--窄屏导航结束-->
+<!--通栏开始-->
+<div class="top">
+<!--滚动图片开始-->
+<div class="slide_container">
+<ul class="rslides" id="slider">
+<li>
+<img src="${ctx}/template/themes/${site.theme!}/images/bar02.jpg" alt="">
+<div class="gtwo" style="display: none;">德丰币——第四代数字货币典范</div>
+</li>
+<li>
+<img src="${ctx}/template/themes/${site.theme!}/images/bar03.jpg" alt="">
+<div class="gtwo" style="display: none;">数字货币——让我们一起挖掘现代金融的金矿</div>
+</li>
+<li>
+<img src="${ctx}/template/themes/${site.theme!}/images/bar04.jpg" alt="">
+<div class="gtwo" style="display: none;">德丰币<br />千亿级数字货币交易平台</div>
+</li>
+</ul>
+</div>
+<!--滚动图片结束-->
+</div>
+<!--通栏结束-->
+<!--宽时登录开始-->
+
+<div class="w1200_2">
+<div class="kdenlul">
+<div class="kpzhuce">
+<form>
+<div class="w90">
+<div class="zcbt">用户登录</div>
+<input type="text" class="inpdl" placeholder="请输入用户名"  id="login_name">
+<input type="password" class="inpdl" placeholder="请输入密码"  id="passwd">
+<div class="w100"><div class="yzm1"><input type="text" class="inpdl" placeholder="请输入验证码" id="verify-code-input"></div>
+	<div class="yzm1"><img  id="codeImg" src="${ctx}/captcha"/></div></div>
+</div>
+<a class="aldlu" id="loginBtn">登&nbsp;&nbsp;录</a>
+</form>
+</div>
+</div>
+</div>
+
+<!--宽时登录结束-->
+<!--宽导航开始-->
+<div class="nbiaoz"><img src="${ctx}/template/themes/${site.theme!}/images/biaozhi03.png" /></div>
+<div class="nyuyan" id="nyuyan">
+<div class="nyy1">中文</div>
+<div class="nyy2" id="nyy2"><a href="/indexe" class="anyy">Engilish</a><a href="/indexh" class="anyy">한글</a></div>
+</div>
+<script>
+$(document).ready(function() {
+    $("#nyy2").hide();
+	$("#nyuyan").mouseover(function() {
+    $("#nyy2").show(100);		
+		})
+	$("#nyuyan").mouseleave(function() {
+		 $("#nyy2").hide(100);
+		})
+});
+
+</script>
+<!--宽导航结束-->
+<!--德丰币回报开始-->
+<div class="w100">
+<div class="w1200">
+<div class="w90">
+<div class="huib">
+<div class="w100fg"><font class="font40">德丰币 — 高回报成为投资新宠</font></div>
+<div class="w100"><font class="font16">在2009年，如果您选择用2个披萨优惠券交换1万个比特币的话，现在您已经成为亿万富翁了！比特币三年暴涨117万倍，错过的机会，还会有！德丰币做为新一代电子货币现招募会员，1200W母币对外发售中；</font></div>
+</div>
+<div class="sank">
+<div class="sanks"><img src="${ctx}/template/themes/${site.theme!}/images/yuan01.png" alt=""/><br /><font class="font24">投资安全</font><br />Tim Draper创办，总部设于硅谷，是全球著名的大型风险投资公司</div>
+<div class="sanks"><img src="${ctx}/template/themes/${site.theme!}/images/yuan02.png" alt=""/><br /><font class="font24">收益稳定</font><br />挖矿+推荐奖+报单管理奖+管理奖，赚钱停不下来</div>
+<div class="sanks"><img src="${ctx}/template/themes/${site.theme!}/images/yuan03.png" alt=""/><br /><font class="font24">提现便捷</font><br />会员交易、平台寄卖、官方收购，随时提现，资金掌控有保障</div>
+</div>
+</div>
+</div>
+</div>
+<!--德丰币回报结束-->
+<!--德丰币之父开始-->
+<div class="w100y">
+<div class="w1200">
+<div class="w90">
+<div class="huib">
+<div class="w100"><img src="${ctx}/template/themes/${site.theme!}/images/yuan04.png" alt="" class="imgtim"/></div>
+<div class="w100fg"><font class="font40">德丰币之父 — Tim Draper</font></div>
+<div class="w100"><font class="font16">德丰杰（Draper Fisher Jurvetson, 简称DFJ）由Tim Draper作为第三代家族成员所创办，总部设于硅谷，是全球著名的大型风险投资公司，曾经成功投资数字货币在韩国最大的比特币创业公司之一 Coinplug。现在为了覆盖网络市场多个国家同时启动，准备发行6个月推出DF COIN前期以复利形式累计会员。</font></div>
+</div>
+</div>
+</div>
+</div>
+<!--德丰币这父结束-->
+<!--资讯开始-->
+<div class="w100">
+<div class="w1200">
+<div class="w90">
+<div class="huib"><div class="w100fg"><font class="font40">德丰杰资讯</font></div></div>
+<div class="zixun">
+<div class="zxtu"><a href="#"><img src="${ctx}/template/themes/${site.theme!}/images/zixun1.jpg" alt=""/></a></div>
+<div class="zxwo">
+<div class="zxwobt">卓越的企业家</div>
+<div class="zxwojj"><font class="font16">伟大的公司源于伟大的企业家。自1985年开始，我们便和一些最优秀的创业者在利用新技术创造奇迹。</font></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--资讯结束-->
+<!--交易额开始-->
+<div class="w100y">
+<div class="w1200">
+<div class="w90">
+<div class="huib" style="display: none;">
+<font class="font40hs">累计交易额</font><font class="font40"> 93 </font><font class="font40hs">亿</font><font class="font40"> 3067 </font><font class="font40hs">万</font>
+</div>
+<div class="w100"><a class="shengq">申请成为德丰币会员</a></div>
+</div>
+</div>
+</div>
+<!--交易额结束-->
+<!--版权开始-->
+<div class="end" style="display: none">
+<div class="w1200">
+<div class="w90">
+<div class="endk1">
+<div class="w100">
+© defengbi.com  中国德丰币运营管理公司    京ICP备8741254号<br>
+地址：合肥市高新区科学大道79号科创中心3栋1层<br>
+邮编：230088
+</div>
+<div class="endtel2">电话：400-888-999（周一至周六8:30-17:30）<br /><a href="#" class="awh"> 企业邮箱</a>&nbsp;&nbsp;<a href="#" class="awh"> 留言反馈</a></div>
+<div class="w100">
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_wx.png"  alt="" class="encfx"/></a>
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_sina.png"  alt="" class="encfx"/></a>
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_tx.png"  alt="" class="encfx"/></a>
+<a href="#" ><img src="${ctx}/template/themes/${site.theme!}/images/end_kj.png"  alt="" class="encfx"/></a>
+</div>
+</div>
+<div class="endk2">
+<div class="tel"><font class="fonttel">400-888-999</font><br />周一至周六 8：30-17：30</div>
+<div class="w100">
+<a href="#" class="endmail">企业邮箱</a><a href="#" class="endly"> 留言反馈</a> </div>
+</div>
+<div class="endk3">
+<div class="endk3ewm"><img src="${ctx}/template/themes/${site.theme!}/images/ewm01.png" alt=""/><br />德丰币微信</div>
+<div class="endk3ewm"><img src="${ctx}/template/themes/${site.theme!}/images/ewm02.png" alt=""/><br />德丰币微博</div>
+</div>
+</div>
+</div>
+</div>
+<!--版权结束-->
+<script src="${ctx}/template/themes/${site.theme!}/js/responsiveslides.min.js"></script>
+<script src="${ctx}/template/themes/${site.theme!}/js/slide.js"></script>
+</body>
+</html>
+<script>
+	$(function () {
+		$("#verify-img,#codeImg").click(reloadVerifyImg);
+		$(document).keypress(function(e) {
+			// 回车键事件
+			if(e.which == 13) {
+				$("#loginBtn").click();
+			}
+		});
+
+		//登录
+		$("#loginBtn").click(function(){
+			var username = $.trim($("#login_name").val());
+			var passwd = $.trim($("#passwd").val());
+			var vcode = $.trim($("#verify-code-input").val());
+			if(username.length == 0) {
+				showErr("用户名不能为空");
+				return false;
+			} else if(passwd.length == 0) {
+				showErr("密码不能为空");
+				return false;
+			} else if(vcode.length != 4) {
+				showErr("验证码错误");
+				return false;
+			}
+			gravel.ajax("/ajax/login",{"password":passwd,"vcode":vcode,"login_name":username}, function (obj) {
+				if(obj){
+					if(obj.result){
+						location.href="/user";
+					}else{
+						alert(obj.message);
+					}
+				}else{
+
+				}
+			});
+		});
+
+		$("#loginBtn1").click(function(){
+			var username = $.trim($("#login_name1").val());
+			var passwd = $.trim($("#passwd1").val());
+			var vcode = $.trim($("#verify-code-input1").val());
+			if(username.length == 0) {
+				showErr("用户名不能为空");
+				return false;
+			} else if(passwd.length == 0) {
+				showErr("密码不能为空");
+				return false;
+			} else if(vcode.length != 4) {
+				showErr("验证码错误");
+				return false;
+			}
+			gravel.ajax("/ajax/login",{"password":passwd,"vcode":vcode,"login_name":username}, function (obj) {
+				if(obj){
+					if(obj.result){
+						location.href="/user";
+					}else{
+						alert(obj.message);
+					}
+				}else{
+
+				}
+			});
+		});
+	})
+	function  reloadVerifyImg(){
+		$("#codeImg,#codeImg1").attr("src","${ctx}/captcha?rand="+Math.random());
+	}
+</script>

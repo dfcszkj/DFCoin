@@ -1,0 +1,144 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+    <script src="${ctx}/layer/layer.js"></script>
+    <script src="${ctx}/template/themes/${site.theme!}/user/js/dtree.js"></script>
+    <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+
+    <script src="${ctx}/layer/layer.js"></script>
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />-->
+    <!--<![endif]&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />-->
+    <!--[if lte IE 8]>
+    <script src="${ctx}/js/html5shiv.js"></script>
+    <script src="${ctx}/js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .row{background: none !important;}
+        .pagination{float: right;margin: 9px 0px !important;}
+
+    </style>
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />-->
+    <![endif]-->
+</head>
+<body>
+<?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+
+<!--会员开始-->
+            <div class="tabku90" style="padding-bottom:20px;">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>会员列表</span></div>
+                    <div class="tabtopri" id="topss" style="display:none"><input type="text" class="inpdate" placeholder="请输入会员名"><a class="atopriss">搜索</a></div>
+                </div>
+                <div class="w96">
+                    <div class="w100" id="huiyuan">
+                        <!--会员树开始-->
+                        <div class="tabku">
+                            <div class="tabtop">
+                                <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab1.png" /><span style="width:auto;">【${user.login_name!}】的团队</span></div>
+                            </div>
+                            <div class="w100">
+                                <div class="w90" style="margin-top:15px; margin-bottom:15px;">
+
+                                    <div class="dtree">
+                                        <div class="w100" style="margin-bottom:8px; text-align:center;"><a href="javascript: d.openAll();">展开全部</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript: d.closeAll();">收缩全部</a></div>
+                                        <div class="w100">
+                                            <script type="text/javascript">
+	<!--
+		d = new dTree("d");
+
+
+
+    var mini=0;
+    <? if(exist("tuiedList") && tuiedList != null){ ?>
+         <?for(ff in tuiedList!){?>
+            mini=${ff.tui_id!0};
+            d.add(${ff.id!0},${ff.tui_id!0},"${ff.login_name}","return showUser('${ff.login_name}','${ff.truename}','${ff.phone}','${ff.alipay}','${ff.wechat}','${ff.bite_link}');");
+        <?}?>
+
+    <? } ?>
+    d.add(mini,-1,"所有记录","");
+    function showUser(login_name,truename,phone,alipay,wechat,bite_link){
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            shift: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: '<style>p{width:300px;margin:10px 50px;}</style><p>登录名:'+login_name+'</p>'+ '<p>姓名:'+truename+'</p>'+ '<p>电话:'+phone+'</p>'+ '<p>支付宝:'+alipay+'</p>'+ '<p>微信:'+wechat+'</p>'+ '<p>比特币链接:'+bite_link+'</p>'
+        });
+        return false;
+    }
+
+
+		document.write(d);
+	//-->
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--会员树结束-->
+                        <!--选中会员信息展示开始-->
+                        <div class="tabku">
+                            <div class="tabtop">
+                                <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab2.png" /><span style="width:auto;">账号【${user.login_name!}】的直推列表</span></div>
+                            </div>
+                            <div class="w100">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                    <tbody>
+                                        <tr class="trbt" style="line-height: 32px;">
+                                            <td align="center" valign="middle">用户名</td>
+                                            <td width="16%" align="center" valign="middle" style="display: none;">账号编码</td>
+                                            <td width="16%" align="center" valign="middle">注册时间</td>
+                                            <td width="16%" align="center" valign="middle">激活时间</td>
+                                            <td width="16%" align="center" valign="middle">类型</td>
+                                            <td width="16%" align="center" valign="middle" class="tdno">操作</td>
+                                        </tr>
+                                        <? if(exist("page") && page != null){ ?>
+                                        <?for(ff in page.list!){?>
+                                        <tr class="trhs" style="line-height: 32px;">
+                                            <td align="center" valign="middle">${ff.login_name!}</td>
+                                            <td align="center" valign="middle" style="display: none;">${ff.id}</td>
+                                            <td align="center" valign="middle">${ff.create_time,'yyyy-MM-dd'}</td>
+                                                <td align="center" valign="middle"><?if(ff.level==1) {?>-<?}else{?>${ff.ji_time,'yyyy-MM-dd'}<?}?></td>
+                                            <td align="center" valign="middle">${accountStateMap[ff.state!1]}</td>
+                                            <td align="center" valign="middle" class="tdno"><?if(ff.level==1) {?> <a href="#" class="ared">删除</a> <?}?> </td>
+                                        </tr>
+                                        <?}?>
+
+                                        <? } ?>
+                                    </tbody>
+                                </table>
+                                <form action="/user/tuiList" method="post" id="frm">
+                                <#pagination page="${page!}" formId="frm" />
+                                    </form>
+                            </div>
+                        </div>
+                        <!--选中会员信息展示结束-->
+                    </div>
+                </div>
+            </div>
+            <!--会员结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+</html>

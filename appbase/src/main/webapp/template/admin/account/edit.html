@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>修改用户信息 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"account"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li><i class="ace-icon fa fa-home home-icon"></i> 
+				<a href="${ctx}/admin/account/dashboard">首页</a></li>
+			<li class="active">用户信息修改</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>用户管理
+			<small><i class="ace-icon fa fa-angle-double-right"></i> 编辑</small>
+			</h1>
+		</div>
+		<div class="row">
+			<?if(!isEmpty(error)) {?>${error}<?}?>
+			<div class="col-xs-12">
+		  		<form action="${ctx}/admin/account/doEdit" class="form-horizontal" method="POST" id="frm">
+		  			<input type="hidden" name="accountEntity.id" value="${account.id}"/>
+				  	<div class="form-group">
+						<label class="col-sm-3 control-label" for="login_name"><span class="not-blank">*</span>用户名</label>
+						<div class="col-sm-9">
+							<input type="text" id="login_name" name="accountEntity.login_name" value="${account.login_name!}" placeholder="用户名" class="col-xs-10 col-sm-5" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="email">邮箱</label>
+						<div class="col-sm-9">
+							<input type="text" id="title" name="accountEntity.email" value="${account.email!}" placeholder="区块标题" class="col-xs-10 col-sm-5" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="passwd">密码</label>
+						<div class="col-sm-9">
+							<input type="text" id="title" name="accountEntity.passwd" placeholder="密码" class="col-xs-10 col-sm-5" />
+							<span id="intro_msg" class="help-block help-padding">留空不修改</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="phone">电话</label>
+						<div class="col-sm-9">
+							<input type="text" id="phone" name="accountEntity.phone" value="${account.phone!}" placeholder="电话" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="role">角色</label>
+						<div class="col-sm-9">
+							<input type="text" id="role" placeholder="角色" value="${roleMap[account.role!]}" class="col-xs-10 col-sm-5" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="state">状态</label>
+						<div class="col-sm-9">
+							<input type="text" id="state" placeholder="状态" value="${decode(account.state!, 1, '正常', '锁定')}" class="col-xs-10 col-sm-5" readonly="readonly"/>
+						</div>
+					</div>
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-2 col-md-5">
+							<a class="btn btn-sm pull-left" href="${ctx}/admin/account">
+								<i class="ace-icon fa fa-arrow-left"></i> 返回
+							</a>
+							<button class="btn btn-info pull-right" type="button" id="submitBtn">
+								<i class="ace-icon fa fa-check bigger-110"></i> 提交
+							</button>
+						</div>
+					</div>
+				 </form>								
+			</div> <!-- end col-xs-12 -->
+		</div><!-- end row -->
+	</div>
+</div>
+<?include("../../inc/footer.html"){}?>
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc-extra.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+$("#submitBtn").click(function(){
+	$("#frm").submit();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>德丰币</title>
+	<link href="${ctx}/template/themes/${site.theme!}/css/css_pc.css" rel="stylesheet" type="text/css">
+	<script src="${ctx}/template/themes/${site.theme!}/js/jquery.min.js"></script>
+</head>
+
+<body>
+<!--窄屏导航开始-->
+<div class="zpdh">
+	<div class="w100">
+		<div class="biaozhiz"><a href="#"><img src="${ctx}/template/themes/${site.theme!}/images/biaozhi02.png" alt=""/></a></div>
+		<a class="zpdhr" id="aldh">导航</a>
+		<a class="zpdhr" id="alyy">语言</a>
+		<a class="zpdhr2" id="aldl">登录</a>
+	</div>
+	<div class="zpdhtc" id="tancdh">
+		<div class="w100">
+			<a class="zdhtc">了解德丰币</a>
+			<a class="zdhtc">运营团队</a>
+			<a class="zdhtc">投资收益</a>
+			<a class="zdhtc">德丰杰资讯</a>
+			<a class="zdhtc">矿主学院</a>
+			<a class="zdhtc">德丰杰＋斯坦福</a>
+		</div>
+		<a class="tcshouh" id="shdh"><img src="${ctx}/template/themes/${site.theme!}/images/tcshouh.png"/></a>
+	</div>
+	<div class="zpdhtc" id="tancyy">
+		<div class="w100">
+			<a class="zdhtc">中文简体</a>
+			<a class="zdhtc">中文繁体</a>
+			<a class="zdhtc">English</a>
+		</div>
+		<a class="tcshouh" id="shyy"><img src="${ctx}/template/themes/${site.theme!}/images/tcshouh.png"/></a>
+	</div>
+</div>
+<script>
+	$(document).ready(function() {
+		$("#tancdh,#tancyy").hide();
+		$("#aldh").click(function(){
+			$("#tancyy").hide();
+			$("#tancdh").show(150);
+		})
+		$("#alyy").click(function(){
+			$("#tancdh").hide();
+			$("#tancyy").show(150);
+		})
+		$("#shdh").click(function(){
+			$("#tancdh").hide(150);
+		})
+		$("#shyy").click(function(){
+			$("#tancyy").hide(150);
+		})
+	});
+</script>
+<div class="tczhuce" id="tcdl">
+	<div class="w100"><div class="fg_r"><div class="zcgbdw"><a class="zcgb" id="gbdl">×</a></div></div></div>
+	<form>
+		<div class="w90">
+			<div class="zcbt">用户登录</div>
+			<input type="text" class="inpdl" placeholder="请输入用户名">
+			<input type="password" class="inpdl" placeholder="请输入密码">
+			<div class="w100"><div class="yzm1"><input type="text" class="inpdl" placeholder="请输入验证码"></div><div class="yzm1"><img src="${ctx}/template/themes/${site.theme!}/images/yzm.png"/></div></div>
+		</div>
+		<a class="aldlu">登&nbsp;&nbsp;录</a>
+	</form>
+</div>
+<script>
+	$(document).ready(function() {
+		$("#tcdl").hide();
+		$("#aldl").click(function(){
+			$("#tcdl").show(150);
+		})
+		$("#gbdl").click(function(){
+			$("#tcdl").hide(150);
+		})
+	})
+</script>
+<!--窄屏导航结束-->
+<!--通栏开始-->
+<div class="topxx">
+	<?for(ff in banner){?>
+	<img src="${ctx}${ff.banner!}" />
+	<?}?>
+</div>
+<!--通栏结束-->
+<!--导航开始-->
+<div class="dhdw">
+	<div class="dh">
+		<div class="dhk">
+			<div class="biaozhi"><a href="/"><img src="${ctx}${system.logo!}" alt=""/></a></div>
+			<div class="dhri">
+				<div class="yuyan" style="display: none;">
+					<div class="fg" id="yyxz">中文简体</div>
+					<div class="fg_r">
+						<div class="yydw"><div class="yytc" id="yytc"><div class="sanjiao"><img src="${ctx}/template/themes/${site.theme!}/images/dian_sanjiao.png" alt=""/></div><a class="adhtc" href="#">中文繁体</a><a class="adhtc" href="#">English</a></div></div>
+					</div>
+					<script>
+						$(document).ready(function() {
+							$("#yytc").hide();
+							$("#yyxz").mouseover(function(){
+								$("#yytc").show();
+							})
+							$("#yytc").mouseleave(function(){
+								$("#yytc").hide();
+							})
+						});
+					</script>
+				</div>
+				<?for(ff in list){?>
+				<a href="/indexDetail?id=${ff.id!0}" class="adh">${ff.name!}</a>
+				<?}?>
+			</div>
+		</div>
+	</div>
+</div>
+<!--导航结束-->
+<!--内容开始-->
+<div class="w100">
+	<div class="w1200">
+		<div class="w90">
+			<div class="lrbt"><?for(ff in list){?>
+				<?if(ff.id==id){?>
+				${ff.name!}
+				<?}?>
+				<?}?>）</div>
+			<div class="lr">
+				<?for(ff in list){?>
+				<?if(ff.id==id){?>
+				${ff.content!}
+				<?}?>
+				<?}?>
+			</div>
+		</div>
+	</div>
+</div>
+<!--内容结束-->
+<!--版权开始-->
+<div class="end" style="display: none;">
+	<div class="w1200">
+		<div class="w90">
+			<div class="endk1">
+				<div class="w100">
+					© defengbi.com  中国德丰币运营管理公司    京ICP备8741254号<br>
+					地址：合肥市高新区科学大道79号科创中心3栋1层<br>
+					邮编：230088
+				</div>
+				<div class="endtel2">电话：400-888-999（周一至周六8:30-17:30）<br /><a href="#" class="awh"> 企业邮箱</a>&nbsp;&nbsp;<a href="#" class="awh"> 留言反馈</a></div>
+				<div class="w100">
+					<a href="#" ><img src="images/end_wx.png"  alt="" class="encfx"/></a>
+					<a href="#" ><img src="images/end_sina.png"  alt="" class="encfx"/></a>
+					<a href="#" ><img src="images/end_tx.png"  alt="" class="encfx"/></a>
+					<a href="#" ><img src="images/end_kj.png"  alt="" class="encfx"/></a>
+				</div>
+			</div>
+			<div class="endk2">
+				<div class="tel"><font class="fonttel">400-888-999</font><br />周一至周六 8：30-17：30</div>
+				<div class="w100">
+					<a href="#" class="endmail">企业邮箱</a><a href="#" class="endly"> 留言反馈</a> </div>
+			</div>
+			<div class="endk3">
+				<div class="endk3ewm"><img src="images/ewm01.png" alt=""/><br />德丰币微信</div>
+				<div class="endk3ewm"><img src="images/ewm02.png" alt=""/><br />德丰币微博</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--版权结束-->
+</body>
+</html>
+
+<script>
+	$(function () {
+		$("#verify-img,#codeImg").click(reloadVerifyImg);
+		$(document).keypress(function(e) {
+			// 回车键事件
+			if(e.which == 13) {
+				$("#loginBtn").click();
+			}
+		});
+
+		//登录
+		$("#loginBtn").click(function(){
+			var username = $.trim($("#login_name").val());
+			var passwd = $.trim($("#passwd").val());
+			var vcode = $.trim($("#verify-code-input").val());
+			if(username.length == 0) {
+				showErr("用户名不能为空");
+				return false;
+			} else if(passwd.length == 0) {
+				showErr("密码不能为空");
+				return false;
+			} else if(vcode.length != 4) {
+				showErr("验证码错误");
+				return false;
+			}
+			gravel.ajax("/ajax/login",{"password":passwd,"vcode":vcode,"login_name":username}, function (obj) {
+				if(obj){
+					if(obj.result){
+						location.href="/user";
+					}else{
+						alert(obj.message);
+					}
+				}else{
+
+				}
+			});
+		});
+	})
+	function  reloadVerifyImg(){
+		$("#codeImg").attr("src","${ctx}/captcha?rand="+Math.random());
+	}
+</script>

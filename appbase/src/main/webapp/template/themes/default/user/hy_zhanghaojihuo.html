@@ -1,0 +1,197 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+    <script src="${ctx}/layer/layer.js"></script>
+    <script src="${ctx}/template/themes/${site.theme!}/user/js/dtree.js"></script>
+    <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />-->
+    <!--<![endif]&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />-->
+    <!--[if lte IE 8]>
+    <script src="${ctx}/js/html5shiv.js"></script>
+    <script src="${ctx}/js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .row{background: none !important;}
+        .pagination{float: right;margin: 9px 0px !important;}
+
+    </style>
+</head>
+<body>
+<?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+<!--我的账号结束-->
+            <!--会员激活开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>账号激活</span></div>
+                </div>
+                <div class="w90">
+                    <div class="tab_ul" id="erjimima">
+                        <ul>
+                            <li class="li1">二级密码：</li>
+                            <li class="li2">
+                                <input type="password" id="secondPass" class="inptex" placeholder="请输入二级密码" style="width:90%;">
+                                <div class="tishihs">为了确保信息和资金的安全，以上操作需要进行二级密码验证，验证通过后方能操作</div>
+                            </li>
+                        </ul>
+                        <div class="tijiao"><div class="abut"><a class="but_02" onclick="checkPass()">确认</a></div></div>
+                    </div>
+                    <form action="/user/doJihuo" method="post" id="subForm">
+                        <?if(!isEmpty(error)) {?><p class="error_tip">${error}</p><?}?>
+                        <div class="tab_ul" id="jihuo" style="display:none;">
+                            <ul><li class="li1">钱包余额：</li><li class="li2"><span>${user.b2!0}</span></li></ul>
+                            <ul><li class="li1">激活选项：</li><li class="li2"><span>
+                                <select name="selectXiang" >
+                                    <? if(exist("userlevelmoney") && userlevelmoney != null){ ?>
+                                        <?for(ff in userlevelmoney!){?>
+                                             <? if( user.level_money!0 <ff){ ?>
+                                                <option value="${ff!0}">${ff!0}</option>
+                                              <? } ?>
+                                        <?}?>
+                                    <? } ?>
+                                </select>
+                            </span></li></ul>
+                            <ul style="display: none;"><li class="li1"><font class="fontred">*&nbsp;</font>账号编码：</li><li class="li2"><input type="text" class="inptex" placeholder="请输入您的手机号" style="width:90%;" value="lb7890"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>账号用户名：</li><li class="li2"><span>${user.login_name!}</span></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>账号姓名：</li><li class="li2"><span>${user.truename!}</span></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>资金密码：</li><li class="li2"><input type="password" name="safePass" id="safePass" class="inptex" placeholder="请输入您的资金密码" style="width:90%;"></li></ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="subClick">确认激活</a></div></div>
+                        </div>
+                        <div class="tab_ul" id="jihuoed" style="display:none;">
+                            <p style="color: red;">账号已经为最高级别</p>
+                        </div>
+                    </form>
+
+                    <div class="tab_ul" id="daiji" style="display: none;">
+                        <div class="tabtop">
+                            <div class="tabtople1"><span style="width:auto;">待激活列表</span></div>
+                        </div>
+                        <div class="w100">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                <tbody>
+                                <tr class="trbt" style="line-height: 32px;">
+                                    <td  width="16%" align="center" valign="middle">用户名</td>
+                                    <td width="16%" align="center" valign="middle">注册时间</td>
+                                    <td width="16%" align="center" valign="middle">激活时间</td>
+                                    <td align="center" valign="middle" class="tdno">操作</td>
+                                </tr>
+                                <? if(exist("page") && page != null){ ?>
+                                <?for(ff in page.list!){?>
+                                <tr class="trhs" style="line-height: 32px;">
+                                    <td align="center" valign="middle">${ff.login_name!}</td>
+                                    <td align="center" valign="middle">${ff.create_time,'yyyy-MM-dd'}</td>
+                                    <td align="center" valign="middle"><?if(ff.level==1) {?>-<?}else{?>${ff.ji_time,'yyyy-MM-dd'}<?}?></td>
+                                    <td align="center" valign="middle" class="tdno">
+                                        <select name="jihuo">
+                                                <? if(exist("userlevelmoney") && userlevelmoney != null){ ?>
+                                                    <?for(ff1 in userlevelmoney!){?>
+                                                        <? if(ff.level_money!0 <ff1){ ?>
+                                                        <option value="${ff1!0}">${ff1!0}</option>
+                                                        <? } ?>
+                                                    <?}?>
+                                                <? } ?>
+                                        </select>
+                                        <div class="abut" style="display: inline-block;float:none;vertical-align: middle;margin: 5px;">
+                                            <a class="but_02" style="height: 26px;line-height: 26px;" onclick="jiOther(${ff.id!0},this)">激活</a></div>
+                                    </td>
+                                </tr>
+                                <?}?>
+
+                                <? } ?>
+                                </tbody>
+                            </table>
+                            <form action="/user/jihuo" method="post" id="frm">
+                                <#pagination page="${page!}" formId="frm" />
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <form action="/user/doJihuoOther" method="post" id="otherFRM">
+                <input name="otherUID" value="" type="hidden">
+                <input name="selectXiang" value="" type="hidden">
+            </form>
+            <!--会员激活结束-->
+            <!--温馨提示开始-->
+            <div class="tishi">
+                <font class="font16"><strong>温馨提示</strong></font><br />
+                请仔细核对要激活的账号信息，激活成功后将不能撤销！
+            </div>
+            <!--温馨提示结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+</html>
+<script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script src="${ctx}/js/crypto.js"></script>
+<script type="text/javascript">
+    var userlevel=${user.level!1};
+    var totalLevel=${user.levelCount!0}
+    $(function(){
+        <?if(!isEmpty(skip)) {?>
+            if(userlevel==totalLevel+1){
+                $("#jihuoed").show();
+                $("#jihuo").hide();
+            }else{
+                $("#jihuoed").hide();
+                $("#jihuo").show();
+            }
+            $("#erjimima").hide();
+            $("#daiji").show();
+        <?}else{?>
+
+        <?}?>
+
+        $("#subClick").click(function(){
+            var safepass=$("#safePass").val();
+            if(safepass.length==0)
+            {
+                showErr('请输入资金密码');
+                return false;
+            }
+            $("#subForm").submit();
+        });
+    })
+    function jiOther(id,ele){
+        $("input[name='otherUID']").val(id);
+        $("input[name='selectXiang']").val($(ele).parent().prev().val());
+        if(confirm("确定要进行激活码?"))
+        $("#otherFRM").submit();
+    }
+    function  checkPass(){
+        if(CryptoJS.MD5($("#secondPass").val())=="${user.secondPass}"){
+            if(userlevel==3){
+                $("#jihuoed").show();
+                $("#jihuo").hide();
+            }else{
+                $("#jihuoed").hide();
+                $("#jihuo").show();
+            }
+            $("#erjimima").hide();
+            $("#daiji").show();
+        }else{
+            showErr('二级密码有误');
+            return false;
+        }
+    }
+</script>

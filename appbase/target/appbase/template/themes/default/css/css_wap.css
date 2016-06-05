@@ -1,0 +1,180 @@
+@charset "utf-8";
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	color: #FFFFFF;
+	font-size: 14px;
+	line-height: 22px;
+	font-family: "Microsoft YaHei", "微软雅黑", "宋体", Arial;
+}
+
+html {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+}
+form {
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	color: #3a3a3a;
+	text-decoration: none;
+}
+a img {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+ul,li {
+	margin: 0px;
+	padding:0px;
+	display:block;
+	list-style-type: none;
+	}
+.w100 {
+	width: 100%;
+	height: auto;
+	float: left;
+}
+.main {
+	position: relative;
+	min-height: 100%;
+	height: auto;
+	float: left;
+	width: 100%;
+} 
+.main02{
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+	}
+.end01 {
+	bottom: 0px;
+	height: 30px;
+	width: 90%;
+	background-color: #000000;
+	font-size: 12px;
+	line-height: 20px;
+	color: #9b9b9b;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-top: 10px;
+	text-align: center;
+	position: absolute;
+}
+.end02 {
+	float: left;
+	height: 65px;
+	width: 100%;
+}
+.end01 a {
+	color: #9B9B9B;
+}
+.img100 {
+	width: 100%;
+	height: auto;
+}
+.w90 {
+	width: 90%;
+	height: auto;
+	float: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.main03 {
+	width: 100%;
+	height: 100%;
+	float: left;
+	background-image: url(../images/bg_main.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center bottom;
+	background-size: cover;
+}
+
+.top {
+	width: 100%;
+	height: 120px;
+	float: left;
+	display: block;
+	text-align: center;
+	border-bottom: 1px dotted #E8E8E8;
+}
+.topbt {
+	width: 100%;
+	height: auto;
+	float: left;
+	font-size: 28px;
+	line-height: 50px;
+	margin-top: 20px;
+}
+.topbt2 {
+	width: 100%;
+	height: auto;
+	float: left;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.gongl {
+	width: 90%;
+	height: auto;
+	float: left;
+	margin-left: 5%;
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+.w33 {
+	width: 33.3%;
+	height: 120px;
+	float: left;
+	overflow-y: hidden;
+	overflow-x: hidden;
+	margin-top: 15px;
+}
+.gl150 {
+	width: 80px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.agl {
+	width: 80px;
+	height: 80px;
+	float: left;
+	border-radius: 60px;
+	background-color: #FFFFFF;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.agl img {
+	width: 60px;
+	margin: 10px;
+	height: 60px;
+}
+.gl150 span {
+	width: 100%;
+	height: auto;
+	float: left;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.bodybg {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: cover;
+	background-image: url(../images/bg_main.jpg);
+	background-attachment: fixed;
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>用户管理 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">var ctx = "${ctx}";</script>
+	<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"chushoubi"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li class="active">出售币列表</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>出售币列表</h1>
+		</div>
+		<!-- /.page-header -->
+		<div class="row">
+			<?if(!isEmpty(error)) {?>${error}<?}?>
+			<form action="${ctx}/admin/fuser/chushoubi" id="frm" method="post" class="form-inline">
+				<div class="table-container col-xs-12">
+				<!--<div class="form-group col-xs-2">-->
+					<!--<input type="button" value="删除" id="deleteBtn" class="form-control input-sm " />-->
+				<!--</div>-->
+				<table id="content-table" class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<!--<th class="center" width="5%">-->
+								<!--<label class="position-relative">-->
+									<!--<input type="checkbox" class="ace table_check" />-->
+									<!--<span class="lbl"></span>-->
+								<!--</label>-->
+							<!--</th>-->
+							<th class="center" width="15%">创建时间</th>
+							<td height="10%" align="center" valign="middle">出售平台</td>
+							<td height="10%" align="center" valign="middle">账号</td>
+							<td width="10%" align="center" valign="middle">出售数量(枚)</td>
+							<td width="10%" align="center" valign="middle">价格(元/枚DFB)</td>
+							<td width="10%" align="center" valign="middle">总金额(元)</td>
+							<td width="10%" align="center" valign="middle">状态</td>
+							<td height="36" align="center" valign="middle">操作</td>
+						</tr>
+					</thead>
+					<tbody class="colmun-data">
+						<?for (a in page.list!) {?>
+						<tr>
+							<!--<td class="center" width="5%">-->
+								<!--<label class="position-relative">-->
+									<!--<input type="checkbox" class="ace table_check" name="ids" value="${a.id!}" />-->
+									<!--<span class="lbl"></span>-->
+								<!--</label>-->
+							<!--</td>-->
+							<td class="center">${a.create_time!}</td>
+							<td align="center" valign="middle">
+								<? if(a.type==2){ ?>
+								平台
+								<? }else{ ?>
+								公司
+								<? }?>
+							</td>
+							<td align="center" valign="middle">${a.login_name!}</td>
+							<td align="center" valign="middle">${a.money!0}</td>
+							<td align="center" valign="middle">${a.money_tormb!0}</td>
+							<td align="center" valign="middle">${a.money*a.money_tormb}</td>
+							<td align="center" valign="middle">${ChouShouStateMap[a.state]}</td>
+							<td align="center" valign="middle" class="tdno">
+								<? if(a.type==1&&a.state!=6&&a.state!=3){ ?>
+									<select>
+										<?for (map in ChouShouStateMap!) {?>
+											<? if(map.key>3){ ?>
+												<option value="${map.key}" <? if(map.key!1 ==a.state!1){ ?>selected='selected'<?}?>>${ChouShouStateMap[map.key!1]!}</option>
+											<? }?>
+										<? }?>
+									</select>
+								&nbsp;&nbsp;&nbsp;&nbsp;<a  class="ared" onclick="return checkContorl(this,${a.id!})">处理</a>
+								<? }else{ ?>
+								<? }?>
+							</td>
+						</tr>
+						<?}?>
+					</tbody>
+				</table>
+			</div>
+				<#pagination page="${page!}" formId="frm" />
+			</form>
+	  </div>
+	</div>
+</div>
+
+<?include("../../inc/footer.html"){}?>
+
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+	function checkContorl(ele,id){
+		if(confirm('确定要处理吗?')){
+			location.href="/admin/fuser/chushoulock?id="+id+"&state="+$(ele).prev().val();
+		}
+		return false;
+	}
+	function  chong(id){
+		layer.open({
+			type: 2,
+			title: $(this).html(),
+			maxmin: true,
+			shadeClose: true, //点击遮罩关闭层
+			area: ['450px', '500px'],
+			content: '/admin/fuser/chong?id='+id
+		});
+	}
+jQuery(function($) {
+	$('#content-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+		var th_checked = this.checked;//checkbox inside "TH" table header
+		$(this).closest('table').find('tbody > tr').each(function(){
+			if(th_checked) 
+				$(this).find('input[type=checkbox]').get(0).checked = true;
+			else 
+				$(this).find('input[type=checkbox]').get(0).checked = false; 
+		});
+	});
+	$("#deleteBtn").click(function(){
+		var ckids = "";
+		$("input:checked[name='ids']").each(function(){
+			if($.trim($(this).val()).length > 0)
+				ckids += $.trim($(this).val())+",";
+    	});
+		if($.trim(ckids).length > 0) {
+			location.href = "${ctx}/admin/account/delete?id=" + ckids;
+		}
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,778 @@
+0    DEBUG [2016-05-10 11:47:32]  Setting default value: false
+0    DEBUG [2016-05-10 11:47:32]  Converting 'Boolean' value 'false' to type 'Boolean'
+0    DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Boolean
+3    DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+3    DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Byte'
+4    DEBUG [2016-05-10 11:47:32]      Converted to Byte value '0'
+4    DEBUG [2016-05-10 11:47:32]  Setting default value:  
+4    DEBUG [2016-05-10 11:47:32]  Converting 'Character' value ' ' to type 'Character'
+4    DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Character
+5    DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+5    DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Double'
+5    DEBUG [2016-05-10 11:47:32]      Converted to Double value '0.0'
+6    DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+6    DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Float'
+6    DEBUG [2016-05-10 11:47:32]      Converted to Float value '0.0'
+7    DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+7    DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Integer'
+7    DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Integer
+7    DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+8    DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Long'
+8    DEBUG [2016-05-10 11:47:32]      Converted to Long value '0'
+9    DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+9    DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Short'
+9    DEBUG [2016-05-10 11:47:32]      Converted to Short value '0'
+11   DEBUG [2016-05-10 11:47:32]  Setting default value: 0.0
+11   DEBUG [2016-05-10 11:47:32]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+11   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a BigDecimal
+12   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+12   DEBUG [2016-05-10 11:47:32]  Converting 'BigInteger' value '0' to type 'BigInteger'
+12   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a BigInteger
+12   DEBUG [2016-05-10 11:47:32]  Setting default value: false
+12   DEBUG [2016-05-10 11:47:32]  Converting 'Boolean' value 'false' to type 'Boolean'
+12   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Boolean
+12   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+12   DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Byte'
+12   DEBUG [2016-05-10 11:47:32]      Converted to Byte value '0'
+12   DEBUG [2016-05-10 11:47:32]  Setting default value:  
+13   DEBUG [2016-05-10 11:47:32]  Converting 'Character' value ' ' to type 'Character'
+13   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Character
+13   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+13   DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Double'
+13   DEBUG [2016-05-10 11:47:32]      Converted to Double value '0.0'
+13   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+13   DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Float'
+14   DEBUG [2016-05-10 11:47:32]      Converted to Float value '0.0'
+14   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+14   DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Integer'
+14   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Integer
+14   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+14   DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Long'
+14   DEBUG [2016-05-10 11:47:32]      Converted to Long value '0'
+14   DEBUG [2016-05-10 11:47:32]  Setting default value: 0
+14   DEBUG [2016-05-10 11:47:32]  Converting 'Integer' value '0' to type 'Short'
+14   DEBUG [2016-05-10 11:47:32]      Converted to Short value '0'
+15   DEBUG [2016-05-10 11:47:32]  Setting default value: 
+15   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '' to type 'String'
+24   DEBUG [2016-05-10 11:47:32]  Setting default value: [Z@ea9e141
+24   DEBUG [2016-05-10 11:47:32]  Converting 'boolean[]' value '[Z@ea9e141' to type 'boolean[]'
+24   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a boolean[]
+25   DEBUG [2016-05-10 11:47:32]  Setting default value: [B@1e54cb33
+25   DEBUG [2016-05-10 11:47:32]  Converting 'byte[]' value '[B@1e54cb33' to type 'byte[]'
+25   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a byte[]
+25   DEBUG [2016-05-10 11:47:32]  Setting default value: [C@33cbfa57
+25   DEBUG [2016-05-10 11:47:32]  Converting 'char[]' value '[C@33cbfa57' to type 'char[]'
+25   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a char[]
+25   DEBUG [2016-05-10 11:47:32]  Setting default value: [D@1d96d872
+25   DEBUG [2016-05-10 11:47:32]  Converting 'double[]' value '[D@1d96d872' to type 'double[]'
+26   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a double[]
+26   DEBUG [2016-05-10 11:47:32]  Setting default value: [F@5c748168
+26   DEBUG [2016-05-10 11:47:32]  Converting 'float[]' value '[F@5c748168' to type 'float[]'
+26   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a float[]
+26   DEBUG [2016-05-10 11:47:32]  Setting default value: [I@6441c486
+26   DEBUG [2016-05-10 11:47:32]  Converting 'int[]' value '[I@6441c486' to type 'int[]'
+27   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a int[]
+27   DEBUG [2016-05-10 11:47:32]  Setting default value: [J@834831b
+27   DEBUG [2016-05-10 11:47:32]  Converting 'long[]' value '[J@834831b' to type 'long[]'
+27   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a long[]
+27   DEBUG [2016-05-10 11:47:32]  Setting default value: [S@234a8f27
+27   DEBUG [2016-05-10 11:47:32]  Converting 'short[]' value '[S@234a8f27' to type 'short[]'
+27   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a short[]
+27   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.math.BigDecimal;@5b4d25e7
+27   DEBUG [2016-05-10 11:47:32]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@5b4d25e7' to type 'BigDecimal[]'
+27   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a BigDecimal[]
+27   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.math.BigInteger;@1dc2de84
+28   DEBUG [2016-05-10 11:47:32]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@1dc2de84' to type 'BigInteger[]'
+28   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a BigInteger[]
+28   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Boolean;@58d63b16
+28   DEBUG [2016-05-10 11:47:32]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@58d63b16' to type 'Boolean[]'
+28   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Boolean[]
+28   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Byte;@7772054c
+29   DEBUG [2016-05-10 11:47:32]  Converting 'Byte[]' value '[Ljava.lang.Byte;@7772054c' to type 'Byte[]'
+29   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Byte[]
+29   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Character;@46866946
+29   DEBUG [2016-05-10 11:47:32]  Converting 'Character[]' value '[Ljava.lang.Character;@46866946' to type 'Character[]'
+29   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Character[]
+29   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Double;@236134a1
+29   DEBUG [2016-05-10 11:47:32]  Converting 'Double[]' value '[Ljava.lang.Double;@236134a1' to type 'Double[]'
+30   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Double[]
+30   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Float;@76d05cc9
+30   DEBUG [2016-05-10 11:47:32]  Converting 'Float[]' value '[Ljava.lang.Float;@76d05cc9' to type 'Float[]'
+30   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Float[]
+30   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Integer;@68dcfd52
+30   DEBUG [2016-05-10 11:47:32]  Converting 'Integer[]' value '[Ljava.lang.Integer;@68dcfd52' to type 'Integer[]'
+31   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Integer[]
+31   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Long;@5177e388
+31   DEBUG [2016-05-10 11:47:32]  Converting 'Long[]' value '[Ljava.lang.Long;@5177e388' to type 'Long[]'
+31   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Long[]
+31   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Short;@cc239ba
+31   DEBUG [2016-05-10 11:47:32]  Converting 'Short[]' value '[Ljava.lang.Short;@cc239ba' to type 'Short[]'
+32   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Short[]
+32   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.String;@69d6a7cd
+32   DEBUG [2016-05-10 11:47:32]  Converting 'String[]' value '[Ljava.lang.String;@69d6a7cd' to type 'String[]'
+32   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a String[]
+32   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.lang.Class;@3162743f
+32   DEBUG [2016-05-10 11:47:32]  Converting 'Class[]' value '[Ljava.lang.Class;@3162743f' to type 'Class[]'
+32   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Class[]
+32   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.util.Date;@2c708440
+32   DEBUG [2016-05-10 11:47:32]  Converting 'Date[]' value '[Ljava.util.Date;@2c708440' to type 'Date[]'
+32   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Date[]
+33   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.util.Calendar;@6cf31447
+33   DEBUG [2016-05-10 11:47:32]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@6cf31447' to type 'Calendar[]'
+33   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a Calendar[]
+33   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.io.File;@66e8997c
+33   DEBUG [2016-05-10 11:47:32]  Converting 'java.io.File[]' value '[Ljava.io.File;@66e8997c' to type 'java.io.File[]'
+33   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a java.io.File[]
+33   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.sql.Date;@1b29d52b
+33   DEBUG [2016-05-10 11:47:32]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@1b29d52b' to type 'java.sql.Date[]'
+34   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a java.sql.Date[]
+34   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.sql.Time;@655523dd
+34   DEBUG [2016-05-10 11:47:32]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@655523dd' to type 'java.sql.Time[]'
+34   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a java.sql.Time[]
+34   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.sql.Timestamp;@3a2b2322
+34   DEBUG [2016-05-10 11:47:32]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@3a2b2322' to type 'java.sql.Timestamp[]'
+34   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a java.sql.Timestamp[]
+34   DEBUG [2016-05-10 11:47:32]  Setting default value: [Ljava.net.URL;@12958360
+34   DEBUG [2016-05-10 11:47:32]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@12958360' to type 'java.net.URL[]'
+34   DEBUG [2016-05-10 11:47:32]      No conversion required, value is already a java.net.URL[]
+73   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+73   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+75   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+75   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+87   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+87   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+89   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+89   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+91   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+91   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+94   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+94   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+96   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+96   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+98   DEBUG [2016-05-10 11:47:32]  Convert string '/login' to class 'java.lang.String'
+98   DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/login' to type 'String'
+116  DEBUG [2016-05-10 11:47:32]  Convert string '/admin' to class 'java.lang.String'
+116  DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/admin' to type 'String'
+117  DEBUG [2016-05-10 11:47:32]  Convert string '/admin' to class 'java.lang.String'
+117  DEBUG [2016-05-10 11:47:32]  Converting 'String' value '/admin' to type 'String'
+119  DEBUG [2016-05-10 11:47:32]  Convert string 'true' to class 'boolean'
+119  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'true' to type 'Boolean'
+119  DEBUG [2016-05-10 11:47:32]      Converted to Boolean value 'true'
+120  DEBUG [2016-05-10 11:47:32]  Convert string 'true' to class 'boolean'
+120  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'true' to type 'Boolean'
+120  DEBUG [2016-05-10 11:47:32]      Converted to Boolean value 'true'
+120  DEBUG [2016-05-10 11:47:32]  Convert string 'true' to class 'boolean'
+120  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'true' to type 'Boolean'
+120  DEBUG [2016-05-10 11:47:32]      Converted to Boolean value 'true'
+120  DEBUG [2016-05-10 11:47:32]  Convert string 'authenticationCache' to class 'java.lang.String'
+120  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'authenticationCache' to type 'String'
+120  DEBUG [2016-05-10 11:47:32]  Convert string 'true' to class 'boolean'
+120  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'true' to type 'Boolean'
+120  DEBUG [2016-05-10 11:47:32]      Converted to Boolean value 'true'
+121  DEBUG [2016-05-10 11:47:32]  Convert string 'authorizationCache' to class 'java.lang.String'
+121  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'authorizationCache' to type 'String'
+121  DEBUG [2016-05-10 11:47:32]  Convert string 'classpath:ehcache.xml' to class 'java.lang.String'
+121  DEBUG [2016-05-10 11:47:32]  Converting 'String' value 'classpath:ehcache.xml' to type 'String'
+480  DEBUG [2016-05-10 11:47:33]  FileName set to main.properties
+481  DEBUG [2016-05-10 11:47:33]  ConfigurationUtils.locate(): base is null, name is main.properties
+482  DEBUG [2016-05-10 11:47:33]  Could not locate file main.properties at null: no protocol: main.properties
+487  DEBUG [2016-05-10 11:47:33]  Loading configuration from the context classpath (main.properties)
+487  DEBUG [2016-05-10 11:47:33]  Base path set to file:///Users/gravel/Desktop/appbase/target/classes/main.properties
+1120 ERROR [2016-05-10 11:47:33]  init datasource error
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1370)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1424)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:616)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:890)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:886)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:96)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:80)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:171)
+	at com.hfxb.app.core.plugins.AutoTableBindPlugin.start(AutoTableBindPlugin.java:56)
+	at com.jfinal.core.Config.startPlugins(Config.java:87)
+	at com.jfinal.core.Config.configJFinal(Config.java:48)
+	at com.jfinal.core.JFinal.init(JFinal.java:65)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:295)
+	at org.apache.catalina.core.ApplicationFilterConfig.setFilterDef(ApplicationFilterConfig.java:422)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:115)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4001)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4651)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+1128 ERROR [2016-05-10 11:47:33]  dataSource init error
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1370)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1424)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:616)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:890)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:886)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:96)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:80)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:171)
+	at com.hfxb.app.core.plugins.AutoTableBindPlugin.start(AutoTableBindPlugin.java:56)
+	at com.jfinal.core.Config.startPlugins(Config.java:87)
+	at com.jfinal.core.Config.configJFinal(Config.java:48)
+	at com.jfinal.core.JFinal.init(JFinal.java:65)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:295)
+	at org.apache.catalina.core.ApplicationFilterConfig.setFilterDef(ApplicationFilterConfig.java:422)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:115)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4001)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4651)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+1128 INFO  [2016-05-10 11:47:33]  {dataSource-1} inited
+1128 ERROR [2016-05-10 11:47:33]  Plugin start error: com.hfxb.app.core.plugins.AutoTableBindPlugin. 
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+com.jfinal.plugin.activerecord.ActiveRecordException: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:91)
+	at com.jfinal.plugin.activerecord.ActiveRecordPlugin.start(ActiveRecordPlugin.java:171)
+	at com.hfxb.app.core.plugins.AutoTableBindPlugin.start(AutoTableBindPlugin.java:56)
+	at com.jfinal.core.Config.startPlugins(Config.java:87)
+	at com.jfinal.core.Config.configJFinal(Config.java:48)
+	at com.jfinal.core.JFinal.init(JFinal.java:65)
+	at com.jfinal.core.JFinalFilter.init(JFinalFilter.java:49)
+	at org.apache.catalina.core.ApplicationFilterConfig.getFilter(ApplicationFilterConfig.java:295)
+	at org.apache.catalina.core.ApplicationFilterConfig.setFilterDef(ApplicationFilterConfig.java:422)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:115)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4001)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4651)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardHost.start(StandardHost.java:785)
+	at org.apache.catalina.core.ContainerBase.start(ContainerBase.java:1045)
+	at org.apache.catalina.core.StandardEngine.start(StandardEngine.java:445)
+	at org.apache.catalina.startup.Embedded.start(Embedded.java:825)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.startContainer(AbstractRunMojo.java:558)
+	at org.codehaus.mojo.tomcat.AbstractRunMojo.execute(AbstractRunMojo.java:255)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:209)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:84)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:59)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.singleThreadedBuild(LifecycleStarter.java:183)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:161)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:320)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:156)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:537)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:196)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:290)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:230)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:409)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:352)
+	at org.codehaus.classworlds.Launcher.main(Launcher.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1084)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4232)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4164)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:926)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1748)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1288)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2506)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2539)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2321)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:832)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:46)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:417)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:344)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.FilterAdapter.connection_connect(FilterAdapter.java:785)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1370)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1424)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:616)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:890)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:886)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:96)
+	at com.jfinal.plugin.activerecord.TableBuilder.build(TableBuilder.java:80)
+	... 45 more
+0    DEBUG [2016-05-10 11:50:41]  Setting default value: false
+1    DEBUG [2016-05-10 11:50:41]  Converting 'Boolean' value 'false' to type 'Boolean'
+1    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Boolean
+2    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+2    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Byte'
+3    DEBUG [2016-05-10 11:50:41]      Converted to Byte value '0'
+3    DEBUG [2016-05-10 11:50:41]  Setting default value:  
+3    DEBUG [2016-05-10 11:50:41]  Converting 'Character' value ' ' to type 'Character'
+3    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Character
+3    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+4    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Double'
+4    DEBUG [2016-05-10 11:50:41]      Converted to Double value '0.0'
+4    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+4    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Float'
+4    DEBUG [2016-05-10 11:50:41]      Converted to Float value '0.0'
+5    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+5    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Integer'
+5    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Integer
+5    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+5    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Long'
+6    DEBUG [2016-05-10 11:50:41]      Converted to Long value '0'
+6    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+6    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Short'
+6    DEBUG [2016-05-10 11:50:41]      Converted to Short value '0'
+7    DEBUG [2016-05-10 11:50:41]  Setting default value: 0.0
+8    DEBUG [2016-05-10 11:50:41]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+8    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a BigDecimal
+8    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+8    DEBUG [2016-05-10 11:50:41]  Converting 'BigInteger' value '0' to type 'BigInteger'
+8    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a BigInteger
+8    DEBUG [2016-05-10 11:50:41]  Setting default value: false
+8    DEBUG [2016-05-10 11:50:41]  Converting 'Boolean' value 'false' to type 'Boolean'
+8    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Boolean
+8    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+8    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Byte'
+8    DEBUG [2016-05-10 11:50:41]      Converted to Byte value '0'
+9    DEBUG [2016-05-10 11:50:41]  Setting default value:  
+9    DEBUG [2016-05-10 11:50:41]  Converting 'Character' value ' ' to type 'Character'
+9    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Character
+9    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+9    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Double'
+9    DEBUG [2016-05-10 11:50:41]      Converted to Double value '0.0'
+9    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+9    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Float'
+9    DEBUG [2016-05-10 11:50:41]      Converted to Float value '0.0'
+9    DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+9    DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Integer'
+9    DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Integer
+10   DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+10   DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Long'
+10   DEBUG [2016-05-10 11:50:41]      Converted to Long value '0'
+10   DEBUG [2016-05-10 11:50:41]  Setting default value: 0
+10   DEBUG [2016-05-10 11:50:41]  Converting 'Integer' value '0' to type 'Short'
+10   DEBUG [2016-05-10 11:50:41]      Converted to Short value '0'
+11   DEBUG [2016-05-10 11:50:41]  Setting default value: 
+11   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '' to type 'String'
+16   DEBUG [2016-05-10 11:50:41]  Setting default value: [Z@5c748168
+16   DEBUG [2016-05-10 11:50:41]  Converting 'boolean[]' value '[Z@5c748168' to type 'boolean[]'
+16   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a boolean[]
+16   DEBUG [2016-05-10 11:50:41]  Setting default value: [B@6441c486
+16   DEBUG [2016-05-10 11:50:41]  Converting 'byte[]' value '[B@6441c486' to type 'byte[]'
+17   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a byte[]
+17   DEBUG [2016-05-10 11:50:41]  Setting default value: [C@834831b
+17   DEBUG [2016-05-10 11:50:41]  Converting 'char[]' value '[C@834831b' to type 'char[]'
+17   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a char[]
+17   DEBUG [2016-05-10 11:50:41]  Setting default value: [D@234a8f27
+17   DEBUG [2016-05-10 11:50:41]  Converting 'double[]' value '[D@234a8f27' to type 'double[]'
+17   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a double[]
+17   DEBUG [2016-05-10 11:50:41]  Setting default value: [F@5b4d25e7
+17   DEBUG [2016-05-10 11:50:41]  Converting 'float[]' value '[F@5b4d25e7' to type 'float[]'
+17   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a float[]
+17   DEBUG [2016-05-10 11:50:41]  Setting default value: [I@31c2affc
+17   DEBUG [2016-05-10 11:50:41]  Converting 'int[]' value '[I@31c2affc' to type 'int[]'
+17   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a int[]
+17   DEBUG [2016-05-10 11:50:41]  Setting default value: [J@1dc2de84
+18   DEBUG [2016-05-10 11:50:41]  Converting 'long[]' value '[J@1dc2de84' to type 'long[]'
+18   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a long[]
+18   DEBUG [2016-05-10 11:50:41]  Setting default value: [S@6a0659ac
+18   DEBUG [2016-05-10 11:50:41]  Converting 'short[]' value '[S@6a0659ac' to type 'short[]'
+18   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a short[]
+18   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.math.BigDecimal;@58d63b16
+18   DEBUG [2016-05-10 11:50:41]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@58d63b16' to type 'BigDecimal[]'
+18   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a BigDecimal[]
+18   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.math.BigInteger;@7772054c
+18   DEBUG [2016-05-10 11:50:41]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@7772054c' to type 'BigInteger[]'
+18   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a BigInteger[]
+18   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Boolean;@46866946
+18   DEBUG [2016-05-10 11:50:41]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@46866946' to type 'Boolean[]'
+18   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Boolean[]
+18   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Byte;@236134a1
+18   DEBUG [2016-05-10 11:50:41]  Converting 'Byte[]' value '[Ljava.lang.Byte;@236134a1' to type 'Byte[]'
+19   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Byte[]
+19   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Character;@76d05cc9
+19   DEBUG [2016-05-10 11:50:41]  Converting 'Character[]' value '[Ljava.lang.Character;@76d05cc9' to type 'Character[]'
+19   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Character[]
+19   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Double;@68dcfd52
+19   DEBUG [2016-05-10 11:50:41]  Converting 'Double[]' value '[Ljava.lang.Double;@68dcfd52' to type 'Double[]'
+19   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Double[]
+19   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Float;@5177e388
+19   DEBUG [2016-05-10 11:50:41]  Converting 'Float[]' value '[Ljava.lang.Float;@5177e388' to type 'Float[]'
+19   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Float[]
+19   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Integer;@cc239ba
+19   DEBUG [2016-05-10 11:50:41]  Converting 'Integer[]' value '[Ljava.lang.Integer;@cc239ba' to type 'Integer[]'
+19   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Integer[]
+19   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Long;@69d6a7cd
+19   DEBUG [2016-05-10 11:50:41]  Converting 'Long[]' value '[Ljava.lang.Long;@69d6a7cd' to type 'Long[]'
+20   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Long[]
+20   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Short;@2c708440
+20   DEBUG [2016-05-10 11:50:41]  Converting 'Short[]' value '[Ljava.lang.Short;@2c708440' to type 'Short[]'
+20   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Short[]
+20   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.String;@6cf31447
+20   DEBUG [2016-05-10 11:50:41]  Converting 'String[]' value '[Ljava.lang.String;@6cf31447' to type 'String[]'
+20   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a String[]
+20   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.lang.Class;@4e92466a
+20   DEBUG [2016-05-10 11:50:41]  Converting 'Class[]' value '[Ljava.lang.Class;@4e92466a' to type 'Class[]'
+20   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Class[]
+20   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.util.Date;@66e8997c
+20   DEBUG [2016-05-10 11:50:41]  Converting 'Date[]' value '[Ljava.util.Date;@66e8997c' to type 'Date[]'
+20   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Date[]
+20   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.util.Calendar;@1b29d52b
+20   DEBUG [2016-05-10 11:50:41]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@1b29d52b' to type 'Calendar[]'
+20   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a Calendar[]
+21   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.io.File;@655523dd
+21   DEBUG [2016-05-10 11:50:41]  Converting 'java.io.File[]' value '[Ljava.io.File;@655523dd' to type 'java.io.File[]'
+21   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a java.io.File[]
+21   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.sql.Date;@3a2b2322
+21   DEBUG [2016-05-10 11:50:41]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@3a2b2322' to type 'java.sql.Date[]'
+21   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a java.sql.Date[]
+21   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.sql.Time;@12958360
+21   DEBUG [2016-05-10 11:50:41]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@12958360' to type 'java.sql.Time[]'
+21   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a java.sql.Time[]
+21   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.sql.Timestamp;@6f3f0fae
+21   DEBUG [2016-05-10 11:50:41]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@6f3f0fae' to type 'java.sql.Timestamp[]'
+22   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a java.sql.Timestamp[]
+22   DEBUG [2016-05-10 11:50:41]  Setting default value: [Ljava.net.URL;@1f966492
+22   DEBUG [2016-05-10 11:50:41]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@1f966492' to type 'java.net.URL[]'
+22   DEBUG [2016-05-10 11:50:41]      No conversion required, value is already a java.net.URL[]
+52   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+52   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+53   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+53   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+57   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+57   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+59   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+59   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+60   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+60   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+61   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+61   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+62   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+62   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+63   DEBUG [2016-05-10 11:50:41]  Convert string '/login' to class 'java.lang.String'
+63   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/login' to type 'String'
+72   DEBUG [2016-05-10 11:50:41]  Convert string '/admin' to class 'java.lang.String'
+72   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/admin' to type 'String'
+72   DEBUG [2016-05-10 11:50:41]  Convert string '/admin' to class 'java.lang.String'
+72   DEBUG [2016-05-10 11:50:41]  Converting 'String' value '/admin' to type 'String'
+73   DEBUG [2016-05-10 11:50:41]  Convert string 'true' to class 'boolean'
+74   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'true' to type 'Boolean'
+74   DEBUG [2016-05-10 11:50:41]      Converted to Boolean value 'true'
+74   DEBUG [2016-05-10 11:50:41]  Convert string 'true' to class 'boolean'
+74   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'true' to type 'Boolean'
+74   DEBUG [2016-05-10 11:50:41]      Converted to Boolean value 'true'
+74   DEBUG [2016-05-10 11:50:41]  Convert string 'true' to class 'boolean'
+74   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'true' to type 'Boolean'
+74   DEBUG [2016-05-10 11:50:41]      Converted to Boolean value 'true'
+74   DEBUG [2016-05-10 11:50:41]  Convert string 'authenticationCache' to class 'java.lang.String'
+74   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'authenticationCache' to type 'String'
+74   DEBUG [2016-05-10 11:50:41]  Convert string 'true' to class 'boolean'
+74   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'true' to type 'Boolean'
+74   DEBUG [2016-05-10 11:50:41]      Converted to Boolean value 'true'
+75   DEBUG [2016-05-10 11:50:41]  Convert string 'authorizationCache' to class 'java.lang.String'
+75   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'authorizationCache' to type 'String'
+75   DEBUG [2016-05-10 11:50:41]  Convert string 'classpath:ehcache.xml' to class 'java.lang.String'
+75   DEBUG [2016-05-10 11:50:41]  Converting 'String' value 'classpath:ehcache.xml' to type 'String'
+240  DEBUG [2016-05-10 11:50:41]  FileName set to main.properties
+242  DEBUG [2016-05-10 11:50:41]  ConfigurationUtils.locate(): base is null, name is main.properties
+242  DEBUG [2016-05-10 11:50:41]  Could not locate file main.properties at null: no protocol: main.properties
+247  DEBUG [2016-05-10 11:50:41]  Loading configuration from the context classpath (main.properties)
+247  DEBUG [2016-05-10 11:50:41]  Base path set to file:///Users/gravel/Desktop/appbase/target/classes/main.properties
+674  INFO  [2016-05-10 11:50:41]  {dataSource-1} inited
+0    DEBUG [2016-05-10 11:51:08]  Setting default value: false
+0    DEBUG [2016-05-10 11:51:08]  Converting 'Boolean' value 'false' to type 'Boolean'
+0    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Boolean
+2    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+2    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Byte'
+2    DEBUG [2016-05-10 11:51:08]      Converted to Byte value '0'
+3    DEBUG [2016-05-10 11:51:08]  Setting default value:  
+3    DEBUG [2016-05-10 11:51:08]  Converting 'Character' value ' ' to type 'Character'
+3    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Character
+3    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+3    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Double'
+3    DEBUG [2016-05-10 11:51:08]      Converted to Double value '0.0'
+4    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+4    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Float'
+4    DEBUG [2016-05-10 11:51:08]      Converted to Float value '0.0'
+4    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+4    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Integer'
+5    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Integer
+5    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+5    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Long'
+5    DEBUG [2016-05-10 11:51:08]      Converted to Long value '0'
+6    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+6    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Short'
+6    DEBUG [2016-05-10 11:51:08]      Converted to Short value '0'
+7    DEBUG [2016-05-10 11:51:08]  Setting default value: 0.0
+7    DEBUG [2016-05-10 11:51:08]  Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
+7    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a BigDecimal
+7    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+7    DEBUG [2016-05-10 11:51:08]  Converting 'BigInteger' value '0' to type 'BigInteger'
+7    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a BigInteger
+8    DEBUG [2016-05-10 11:51:08]  Setting default value: false
+8    DEBUG [2016-05-10 11:51:08]  Converting 'Boolean' value 'false' to type 'Boolean'
+8    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Boolean
+8    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+8    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Byte'
+8    DEBUG [2016-05-10 11:51:08]      Converted to Byte value '0'
+8    DEBUG [2016-05-10 11:51:08]  Setting default value:  
+8    DEBUG [2016-05-10 11:51:08]  Converting 'Character' value ' ' to type 'Character'
+8    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Character
+8    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+8    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Double'
+8    DEBUG [2016-05-10 11:51:08]      Converted to Double value '0.0'
+9    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+9    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Float'
+9    DEBUG [2016-05-10 11:51:08]      Converted to Float value '0.0'
+9    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+9    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Integer'
+9    DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Integer
+9    DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+9    DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Long'
+9    DEBUG [2016-05-10 11:51:08]      Converted to Long value '0'
+10   DEBUG [2016-05-10 11:51:08]  Setting default value: 0
+10   DEBUG [2016-05-10 11:51:08]  Converting 'Integer' value '0' to type 'Short'
+10   DEBUG [2016-05-10 11:51:08]      Converted to Short value '0'
+10   DEBUG [2016-05-10 11:51:08]  Setting default value: 
+10   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '' to type 'String'
+17   DEBUG [2016-05-10 11:51:08]  Setting default value: [Z@421a4ee1
+17   DEBUG [2016-05-10 11:51:08]  Converting 'boolean[]' value '[Z@421a4ee1' to type 'boolean[]'
+17   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a boolean[]
+17   DEBUG [2016-05-10 11:51:08]  Setting default value: [B@1237e0be
+18   DEBUG [2016-05-10 11:51:08]  Converting 'byte[]' value '[B@1237e0be' to type 'byte[]'
+18   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a byte[]
+18   DEBUG [2016-05-10 11:51:08]  Setting default value: [C@528f8f8b
+18   DEBUG [2016-05-10 11:51:08]  Converting 'char[]' value '[C@528f8f8b' to type 'char[]'
+18   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a char[]
+18   DEBUG [2016-05-10 11:51:08]  Setting default value: [D@ea9e141
+18   DEBUG [2016-05-10 11:51:08]  Converting 'double[]' value '[D@ea9e141' to type 'double[]'
+18   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a double[]
+18   DEBUG [2016-05-10 11:51:08]  Setting default value: [F@1e54cb33
+18   DEBUG [2016-05-10 11:51:08]  Converting 'float[]' value '[F@1e54cb33' to type 'float[]'
+19   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a float[]
+19   DEBUG [2016-05-10 11:51:08]  Setting default value: [I@33cbfa57
+19   DEBUG [2016-05-10 11:51:08]  Converting 'int[]' value '[I@33cbfa57' to type 'int[]'
+19   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a int[]
+19   DEBUG [2016-05-10 11:51:08]  Setting default value: [J@1d96d872
+19   DEBUG [2016-05-10 11:51:08]  Converting 'long[]' value '[J@1d96d872' to type 'long[]'
+19   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a long[]
+19   DEBUG [2016-05-10 11:51:08]  Setting default value: [S@5c748168
+19   DEBUG [2016-05-10 11:51:08]  Converting 'short[]' value '[S@5c748168' to type 'short[]'
+19   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a short[]
+20   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.math.BigDecimal;@6441c486
+20   DEBUG [2016-05-10 11:51:08]  Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@6441c486' to type 'BigDecimal[]'
+20   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a BigDecimal[]
+20   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.math.BigInteger;@234a8f27
+20   DEBUG [2016-05-10 11:51:08]  Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@234a8f27' to type 'BigInteger[]'
+20   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a BigInteger[]
+20   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Boolean;@31c2affc
+20   DEBUG [2016-05-10 11:51:08]  Converting 'Boolean[]' value '[Ljava.lang.Boolean;@31c2affc' to type 'Boolean[]'
+20   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Boolean[]
+20   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Byte;@6a0659ac
+20   DEBUG [2016-05-10 11:51:08]  Converting 'Byte[]' value '[Ljava.lang.Byte;@6a0659ac' to type 'Byte[]'
+20   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Byte[]
+20   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Character;@7c4fc2bf
+20   DEBUG [2016-05-10 11:51:08]  Converting 'Character[]' value '[Ljava.lang.Character;@7c4fc2bf' to type 'Character[]'
+21   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Character[]
+21   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Double;@2f61f937
+21   DEBUG [2016-05-10 11:51:08]  Converting 'Double[]' value '[Ljava.lang.Double;@2f61f937' to type 'Double[]'
+21   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Double[]
+21   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Float;@44de0113
+21   DEBUG [2016-05-10 11:51:08]  Converting 'Float[]' value '[Ljava.lang.Float;@44de0113' to type 'Float[]'
+21   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Float[]
+21   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Integer;@369c9bb
+21   DEBUG [2016-05-10 11:51:08]  Converting 'Integer[]' value '[Ljava.lang.Integer;@369c9bb' to type 'Integer[]'
+21   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Integer[]
+21   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Long;@42b21d99
+21   DEBUG [2016-05-10 11:51:08]  Converting 'Long[]' value '[Ljava.lang.Long;@42b21d99' to type 'Long[]'
+21   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Long[]
+21   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Short;@25b5c5e3
+21   DEBUG [2016-05-10 11:51:08]  Converting 'Short[]' value '[Ljava.lang.Short;@25b5c5e3' to type 'Short[]'
+21   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Short[]
+22   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.String;@37b72ea
+22   DEBUG [2016-05-10 11:51:08]  Converting 'String[]' value '[Ljava.lang.String;@37b72ea' to type 'String[]'
+22   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a String[]
+22   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.lang.Class;@cc239ba
+22   DEBUG [2016-05-10 11:51:08]  Converting 'Class[]' value '[Ljava.lang.Class;@cc239ba' to type 'Class[]'
+22   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Class[]
+22   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.util.Date;@7d37f1c
+22   DEBUG [2016-05-10 11:51:08]  Converting 'Date[]' value '[Ljava.util.Date;@7d37f1c' to type 'Date[]'
+22   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Date[]
+22   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.util.Calendar;@3162743f
+22   DEBUG [2016-05-10 11:51:08]  Converting 'Calendar[]' value '[Ljava.util.Calendar;@3162743f' to type 'Calendar[]'
+22   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a Calendar[]
+22   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.io.File;@3047254d
+22   DEBUG [2016-05-10 11:51:08]  Converting 'java.io.File[]' value '[Ljava.io.File;@3047254d' to type 'java.io.File[]'
+22   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a java.io.File[]
+22   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.sql.Date;@4e92466a
+22   DEBUG [2016-05-10 11:51:08]  Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@4e92466a' to type 'java.sql.Date[]'
+23   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a java.sql.Date[]
+23   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.sql.Time;@6f0cb5a1
+23   DEBUG [2016-05-10 11:51:08]  Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@6f0cb5a1' to type 'java.sql.Time[]'
+23   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a java.sql.Time[]
+23   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.sql.Timestamp;@47547132
+23   DEBUG [2016-05-10 11:51:08]  Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@47547132' to type 'java.sql.Timestamp[]'
+23   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a java.sql.Timestamp[]
+23   DEBUG [2016-05-10 11:51:08]  Setting default value: [Ljava.net.URL;@6f7e336b
+23   DEBUG [2016-05-10 11:51:08]  Converting 'java.net.URL[]' value '[Ljava.net.URL;@6f7e336b' to type 'java.net.URL[]'
+23   DEBUG [2016-05-10 11:51:08]      No conversion required, value is already a java.net.URL[]
+60   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+60   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+61   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+61   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+67   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+67   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+68   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+69   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+70   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+70   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+71   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+71   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+72   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+72   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+74   DEBUG [2016-05-10 11:51:08]  Convert string '/login' to class 'java.lang.String'
+74   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/login' to type 'String'
+84   DEBUG [2016-05-10 11:51:08]  Convert string '/admin' to class 'java.lang.String'
+84   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/admin' to type 'String'
+84   DEBUG [2016-05-10 11:51:08]  Convert string '/admin' to class 'java.lang.String'
+84   DEBUG [2016-05-10 11:51:08]  Converting 'String' value '/admin' to type 'String'
+85   DEBUG [2016-05-10 11:51:08]  Convert string 'true' to class 'boolean'
+85   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'true' to type 'Boolean'
+86   DEBUG [2016-05-10 11:51:08]      Converted to Boolean value 'true'
+86   DEBUG [2016-05-10 11:51:08]  Convert string 'true' to class 'boolean'
+86   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'true' to type 'Boolean'
+86   DEBUG [2016-05-10 11:51:08]      Converted to Boolean value 'true'
+86   DEBUG [2016-05-10 11:51:08]  Convert string 'true' to class 'boolean'
+86   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'true' to type 'Boolean'
+86   DEBUG [2016-05-10 11:51:08]      Converted to Boolean value 'true'
+87   DEBUG [2016-05-10 11:51:08]  Convert string 'authenticationCache' to class 'java.lang.String'
+87   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'authenticationCache' to type 'String'
+87   DEBUG [2016-05-10 11:51:08]  Convert string 'true' to class 'boolean'
+87   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'true' to type 'Boolean'
+87   DEBUG [2016-05-10 11:51:08]      Converted to Boolean value 'true'
+87   DEBUG [2016-05-10 11:51:08]  Convert string 'authorizationCache' to class 'java.lang.String'
+87   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'authorizationCache' to type 'String'
+87   DEBUG [2016-05-10 11:51:08]  Convert string 'classpath:ehcache.xml' to class 'java.lang.String'
+87   DEBUG [2016-05-10 11:51:08]  Converting 'String' value 'classpath:ehcache.xml' to type 'String'
+273  DEBUG [2016-05-10 11:51:08]  FileName set to main.properties
+275  DEBUG [2016-05-10 11:51:08]  ConfigurationUtils.locate(): base is null, name is main.properties
+275  DEBUG [2016-05-10 11:51:08]  Could not locate file main.properties at null: no protocol: main.properties
+279  DEBUG [2016-05-10 11:51:08]  Loading configuration from the context classpath (main.properties)
+280  DEBUG [2016-05-10 11:51:08]  Base path set to file:///Users/gravel/Desktop/appbase/target/classes/main.properties
+726  INFO  [2016-05-10 11:51:09]  {dataSource-1} inited

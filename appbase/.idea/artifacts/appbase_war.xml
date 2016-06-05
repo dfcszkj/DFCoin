@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="appbase:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="appbase.war">
+      <element id="artifact" artifact-name="appbase:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/cos.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/json.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/Sdk4J.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

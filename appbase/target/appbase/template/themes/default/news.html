@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<title>德丰币WAP页</title>
+<link href="${ctx}/template/themes/${site.theme!}/css/css_wap.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bodybg">
+<div class="main02">
+  <!--顶部开始-->
+  <div class="top"><div class="topbt">DFC中国区推广资料</div><div class="topbt2" ></div></div>
+  <!--顶部结束-->
+  <!--按钮开始-->
+  <div class="gongl">
+    <?for(ff in list!){?>
+        <div class="w33" style="height:140px !important"><div class="gl150"><a class="agl" href="${ctx}/news/show_${ff.id}.html"><img src="${ctx}${ff.icon!}"/></a><span>${ff.title!}</span></div></div>
+    <?}?>
+  </div>
+  <!--按钮结束-->
+</div>
+</body>
+</html>

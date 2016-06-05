@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="jdbc" uuid="bfaaface-4b3d-415f-b5ea-10a7eb736099">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>huobi.*</schema-pattern>
+      <default-schemas>huobi.*</default-schemas>
+    </data-source>
+  </component>
+</project>

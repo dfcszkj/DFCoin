@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>分类管理 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">var ctx = "${ctx}";</script>
+</head>
+
+<body class="no-skin">
+<?include("../inc/menu.html",{current:"category"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li><i class="ace-icon fa fa-home home-icon"></i> <a
+				href="${ctx}/admin/account/dashboard">首页</a></li>
+			<li class="active">栏目分类</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>栏目分类</h1>
+		</div>
+		<!-- /.page-header -->
+		<div class="row">
+			<div class="searchzone">
+				<table cellspacing="0" cellpadding="0" border="0" width="100%" height="30">
+				 	 <tbody>
+				 		 <tr>
+					    	<td height="30">&nbsp;</td>
+					   	 	<td align="right" colspan="2">
+					   	 		<a target="_self" onclick="showCat('0');" href="#">显示所有</a>
+					   	 		<a target="_self" onclick="showCat('1');" href="#">显示顶级</a>
+					   	 	 	<a target="_self" onclick="showCat('2');" href="#">显示二级</a>
+							    <input type="button" class="button" value="添加顶级分类" onclick="location.href='${ctx}/admin/category/add'"> 
+							    <input type="button" class="button" value="刷新" onclick="location.reload()"> 
+							</td>
+						 </tr>
+					 </tbody>
+				</table>
+			</div>
+			<div class="table-container col-xs-12" style=" border: 1px; padding: 5px 1px; left: 0; richness: 0;">
+				<table class="table table-striped table-bordered table-hover" style="margin-bottom: 0;">
+					<thead>
+						<tr>
+						   <th width="25%">栏目名</th>
+						   <th width="20%">别名</th>	
+						   <th width="25%">链接</th>
+						   <th width="5%">排序</th>
+						   <th width="15%">操作</th>			
+						</tr>
+					</thead>
+					<tbody class="colmun-data">
+						<?for (c in list!) {?>
+							<tr class="level1" id="tr_${c.id}">
+								<td>${c.title}</td>
+								<td>${c.alias}</td>
+								<td><a href="${c.link!}" target='_blank'>${c.link!}</a></td>
+								<td><input type="text" class="form-control input-sm" maxlength="4" name="seq" value="${c.seq}" onkeyup="updateSeq(event, '${c.id}', this.value)" style="width:50px;"/></td>
+								<td style='text-align: center;'>
+									<a href='${ctx}/admin/category/add?id=${c.id}' class='add-childColumn'>添加子栏目</a>&nbsp;|
+									<a href='${ctx}/admin/category/edit?id=${c.id}' class='edit-column'>修改</a>&nbsp;|
+									<a href="#" onclick="javascript:del('${c.id}')" class='edit-column'>删除</a>
+								</td>
+							</tr>
+							<? for(c2 in c.sub!) {?>
+								<tr class="level2" id="tr_${c2.id}">
+									<td>----${c2.title}</td>
+									<td>${c2.alias}</td>
+									<td><a href="${c2.link!}" target='_blank'>${c2.link!}</a></td>
+									<td><input type="text" class="form-control input-sm" maxlength="4" name="seq" value="${c2.seq}" onkeyup="updateSeq(event, '${c2.id}', this.value)" style="width:50px;"/></td>
+									<td style='text-align: center;'>
+										<a href='${ctx}/admin/category/add?id=${c2.id}' class='add-childColumn'>添加子栏目</a>&nbsp;|
+										<a href='${ctx}/admin/category/edit?id=${c2.id}' class='edit-column'>修改</a>&nbsp;|
+										<a href='javascript:del("${c2.id}")' class='edit-column'>删除</a>
+									</td>
+								</tr>
+								<? for(c3 in c2.sub!) {?>
+								<tr class="level3" id="tr_${c3.id}">
+									<td>--------${c3.title}</td>
+									<td>${c3.alias}</td>
+									<td><a target='_blank' href='${c3.link!}'>${c3.link!}</a></td>
+									<td><input type="text" class="form-control input-sm" maxlength="4" name="seq" value="${c3.seq}" onkeyup="updateSeq(event, '${c3.id}', this.value)" style="width:50px;"/></td>
+									<td style='text-align: center;'>
+										<a href='${ctx}/admin/category/edit?id=${c3.id}' class='edit-column' >修改</a>&nbsp;|
+										<a href="#" onclick="javascript:del('${c3.id}')" class='edit-column'>删除</a>
+									</td>
+								</tr>
+								<?}?>
+							<?}?>
+						<?}?>
+					</tbody>
+				</table>
+			</div>
+			<div class="alert alert-block">
+				<i class="ace-icon fa fa-check green"></i> 提示： 输入新的顺序数值， 回车即可更新.
+			</div>
+	  </div>
+	</div>
+</div>
+
+<?include("../../inc/footer.html"){}?>
+
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+function showCat(level) {
+	if(level == 0) {
+		$(".level1").show();
+		$(".level2").show();
+		$(".level3").show();
+	} else if(level == 1) {
+		$(".level1").show();
+		$(".level2").hide();
+		$(".level3").hide();
+	} else if(level == 2) {
+		$(".level1").show();
+		$(".level2").show();
+		$(".level3").hide();
+	}
+}
+function del(_id) {
+	$.ajax({
+		dataType: "json",
+		url: "${ctx}/admin/category/delete",
+		data: "id="+_id,
+		success: function(r){
+			if(r.result.result){
+				$("#tr_" + _id).remove();
+			} else {
+				alert("删除失败: " + r.result.msg);
+			}
+		}
+	});
+}
+function updateSeq(e, _id, v) {
+	if(e.keyCode == 13) {
+		$.ajax({
+			dataType: "json",
+			url: "${ctx}/admin/category/updateSeq",
+			data: {id:_id,s:v},
+			success: function(r){
+				if(!r.result.result){
+					alert("更新失败: " + r.result.msg);
+				}
+			}
+		});
+	}
+}
+</script>
+</body>
+</html>

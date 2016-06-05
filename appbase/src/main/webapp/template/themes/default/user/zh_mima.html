@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+            <!--登录密码开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>添加密码</span></div>
+                </div>
+                <div class="w90">
+                    <form action="/ajax/setPass" method="post" id="subForm">
+                        <div class="tab_ul">
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>二级密码：</li><li class="li2"><input type="password" name="secondPass" class="inptex" placeholder="请输入二级密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>确认二级密码：</li><li class="li2"><input type="password" name="reSecondPass"  class="inptex" placeholder="请确认二级密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>资金密码：</li><li class="li2"><input type="password" class="inptex"  name="safePass"  placeholder="资金密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>确认资金密码：</li><li class="li2"><input type="password" class="inptex"  name="reSafePass"  placeholder="确认资金密码" style="width:90%;"></li></ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="subClick">确认设置</a></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--资金密码结束-->
+            <!--温馨提示开始-->
+            <div class="tishi">
+                <font class="font16"><strong>温馨提示</strong></font><br />
+                为了保障资金安全，请定期修改密码！
+            </div>
+            <!--温馨提示结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+</html>
+<script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script src="${ctx}/js/jquery.form.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#subClick").click(function(){
+            var secondPass=$("input[name='secondPass']").val();
+            var reSecondPass=$("input[name='reSecondPass']").val();
+            var safePass=$("input[name='safePass']").val();
+            var reSafePass=$("input[name='reSafePass']").val();
+            if(secondPass.length<6 || secondPass.length >32) {
+                showErr('二级密码长度必须为6-32位');
+                return false;
+            }else if(secondPass!=reSecondPass)
+            {
+                showErr('两次二级密码不一致');
+                return false;
+            }else if(safePass.length<6 || safePass.length >32) {
+                showErr('资金密码长度必须为6-32位');
+                return false;
+            }else if(safePass!=reSafePass)
+            {
+                showErr('两次资金密码不一致');
+                return false;
+            }
+            $("#subForm").ajaxSubmit(function (obj) {
+                if(obj.result){
+                    layer.msg("密码设置成功");
+                    location="/user"
+                }else{
+                    layer.msg(obj.message);
+                }
+            });
+        });
+    })
+</script>

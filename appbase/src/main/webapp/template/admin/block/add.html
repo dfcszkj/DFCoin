@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>添加区块 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"block_add"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li><i class="ace-icon fa fa-home home-icon"></i> 
+				<a href="${ctx}/admin/account/dashboard">首页</a></li>
+			<li class="active">区块管理</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>区块管理
+			<small><i class="ace-icon fa fa-angle-double-right"></i> <?if(isEmpty(block)) {?>添加<?}else{?>编辑<?}?></small>
+			</h1>
+		</div>
+		<div class="row">
+			<?if(!isEmpty(error)) {?>${error}<?}?>
+			<div class="col-xs-12">
+		  		<form action="${ctx}/admin/block/save" class="form-horizontal" method="POST" id="frm">
+		  			<?if(!isEmpty(block)){?>
+		  			<input type="hidden" name="blockEntity.id" value="${block.id}"/>
+		  			<?}?>
+				  	<div class="form-group">
+						<label class="col-sm-3 control-label" for="name"><span class="not-blank">*</span>区块名</label>
+						<div class="col-sm-9">
+							<input type="text" id="name" name="blockEntity.name" value="${block.name!}" placeholder="区块名" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="title">区块标题</label>
+						<div class="col-sm-9">
+							<input type="text" id="title" name="blockEntity.title" value="${block.title!}" placeholder="区块标题" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="type">类型</label>
+						<div class="col-sm-5">
+							<select class="form-control m-b" name="blockEntity.type" id="type">
+								<?for(t in typeList!) {?>
+								<option value="${t.code!}" <?if(t.code! == block.type!){?>selected<?}?>>${t.name!}</option>
+								<?}?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="post_type">文章类型</label>
+						<div class="col-sm-5">
+							<select class="form-control m-b" name="blockEntity.post_type" id="post_type">
+								<?for(p in postTypeList!) {?>
+								<option value="${p.code!}" <?if(p.code! == block.post_type!){?>selected<?}?>>${p.desc!}</option>
+								<?}?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="category">所属栏目</label>
+						<div class="col-sm-5">
+							<select class="form-control m-b" name="blockEntity.category" id="category">
+								<option value="">所有栏目</option>
+								<?for (c in categoryList!) {?>
+								<option value="${c.id!}" <?if(!isEmpty(block) && block.category! == c.id!){?>selected<?}?>>${c.title!}</option>
+									<? for(c2 in c.sub!) {?>
+										<option value="${c2.id!}" <?if(!isEmpty(block) && block.category! == c2.id!){?>selected<?}?>>----${c2.title!}</option>
+										<? for(c3 in c2.sub!) {?>
+											<option value="${c3.id!}" <?if(!isEmpty(block) && block.category! == c3.id!){?>selected<?}?>>--------${c3.title!}</option>
+										<?}?>
+									<?}?>
+								<?}?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="sort_field">排序字段</label>
+						<div class="col-sm-5">
+							<select class="form-control m-b" name="blockEntity.sort_field" id="sort_field">
+								<?for(s in sortFieldList!) {?>
+								<option value="${s.code!}" <?if(s.code! == block.sort_field!){?>selected<?}?>>${s.name!}</option>
+								<?}?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">是否升序</label>
+						<div class="col-sm-5">
+							<label>
+								<input name="blockEntity.asc" value="1" type="radio" class="ace" <?if(!isEmpty(block) && block.asc! == 1){?>checked="checked"<?}?>/>
+								<span class="lbl"> 升序</span>
+							</label>
+							<label>
+								<input name="blockEntity.asc" value="0" type="radio" class="ace" <?if(isEmpty(block) || block.asc! == 0){?>checked="checked"<?}?>/>
+								<span class="lbl"> 降序</span>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="start">展示开始条数</label>
+						<div class="col-sm-9">
+							<input type="text" id="start" name="blockEntity.start" value="${block.start!0}" placeholder="展示开始条数" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="limit">展示数量</label>
+						<div class="col-sm-9">
+							<input type="text" id="limit" name="blockEntity.limit" value="${block.limit!}" placeholder="展示数量" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="target">展示位置</label>
+						<div class="col-sm-5">
+							<select class="form-control m-b" name="blockEntity.target" id="target">
+								<?for(s in targetList!) {?>
+								<option value="${s.code!}" <?if(s.code!'' == (block.target!''+'')){?>selected<?}?>>${s.name!}</option>
+								<?}?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="content">展示内容</label>
+						<div class="col-sm-9">
+							<textarea rows="8" id="content" name="blockEntity.content" placeholder="展示内容" class="col-xs-10 col-sm-8">${block.content!}</textarea>
+						</div>
+					</div>
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-2 col-md-5">
+							<a class="btn btn-sm pull-left" href="${ctx}/admin/block">
+								<i class="ace-icon fa fa-arrow-left"></i> 返回
+							</a>
+							<button class="btn btn-info pull-right" type="button" id="submitBtn">
+								<i class="ace-icon fa fa-check bigger-110"></i> 提交
+							</button>
+						</div>
+					</div>
+				 </form>								
+			</div> <!-- end col-xs-12 -->
+		</div><!-- end row -->
+	</div>
+</div>
+<?include("../../inc/footer.html"){}?>
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc-extra.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+	$("#submitBtn").click(function(){
+		if($.trim($("#name").val()).length == 0) {
+			alert("区块名不能为空");
+			return false;
+		}
+		<?if(isEmpty(block)) {?>
+		$("#frm").attr("action", "${ctx}/admin/block/save");
+		<?}else{?>
+		$("#frm").attr("action", "${ctx}/admin/block/doEdit");
+		<?}?>
+		$("#frm").submit();
+	});
+});
+</script>
+</body>
+</html>

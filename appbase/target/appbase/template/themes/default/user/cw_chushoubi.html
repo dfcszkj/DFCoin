@@ -1,0 +1,305 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+
+    <script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />-->
+    <!--<![endif]&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc.min.css" />-->
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />-->
+    <!--[if lte IE 8]>
+    <script src="${ctx}/js/html5shiv.js"></script>
+    <script src="${ctx}/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <!--<link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />-->
+    <![endif]-->
+    <style type="text/css">
+        .row{background: none !important;}
+        .pagination{float: right;margin: 9px 0px !important;}
+
+    </style>
+    <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#container').highcharts({
+                title: {
+                    text: 'DF币价格走势图',
+                    x: -20 //center
+                },
+                xAxis: {
+                    categories: [  <? if(exist("biList") && biList != null){ ?>
+               <?for(ff in biList!){?>
+                    '${ff.create_time!,'yyyy-MM-dd'}',
+                <?}?>
+                <? } ?>
+                ]
+                },
+                yAxis: {
+                    title: {
+                        text: 'DF币价格(元/枚)'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: '￥'
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                series: [{
+                    name: 'China',
+                    data: [ <? if(exist("biList") && biList != null){ ?>
+                <?for(ff in biList!){?>
+                ${ff.money},
+                 <?}?>
+                    <? } ?>
+             ]
+                }]
+            });
+        });
+    </script>
+
+</head>
+<body>
+<?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+            <!--2列表开始-->
+            <div class="w96">
+                <!--走势图开始-->
+                <div class="w90" style="margin-bottom:10px; margin-top:10px;">
+                    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+                    <script src="http://cdn.hcharts.cn/highcharts/modules/exporting.js"></script>
+                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+                <!--走势图结束-->
+                <div class="w100">
+                    <!--出售币币开始-->
+                    <div class="tabku">
+                        <div class="tabtop">
+                            <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab1.png" /><span>我要出售币</span></div>
+                        </div>
+                        <div class="w90">
+                            <?if(!isEmpty(error)) {?><p class="error_tip">${error}</p><?}?>
+                            <form id="subForm" action="/user/doChuShouBi" method="post">
+                                <div class="tab_ul">
+                                    <div class="goubi">
+                                        <ul><li class="li1"><font class="fontred">*&nbsp;</font>出售数量：</li><li class="li2"><input type="number" id="dfShou" name="money" value="${money!}"  class="inptex" placeholder="请输入您要出售数量" style="width:70%;"><span>&nbsp;DFB</span></li></ul>
+                                        <ul><li class="li1"><font class="fontred">*&nbsp;</font>选择出售价：</li><li class="li2">
+                                            <select name="feebi" id="feebi" >
+                                                <option value="${bi.money!0}">${bi.money!0}</option>
+                                                <? if(exist("chushoujia") && chushoujia != null){ ?>
+                                                    <?for(ff in chushoujia!){?>
+                                                    <option value="${ff!0}">${ff!0}</option>
+                                                    <?}?>
+                                                <? } ?>
+                                            </select>
+                                        </li></ul>
+                                        <ul><li class="li1">总金额：</li><li class="li2"><input type="text" class="inptex" id="dfMoney" placeholder="根据购买币数和当前比率自动计算金额" style="width:70%;" readonly><span>&nbsp;元</span></li></ul>
+                                        <ul><li class="li1"><font class="fontred">*&nbsp;</font>资金密码：</li><li class="li2"><input type="password" id="safepass" name="safepass" value="${safepass!}" class="inptex" placeholder="请输入您的资金密码" style="width:70%;"></li></ul>
+                                        <ul><li class="li1"><font class="fontred">*&nbsp;</font>出售到：
+                                        </li><li class="li2">
+                                            <label>
+                                                <input name="type" value="2" type="radio" class="ace"  checked/>
+                                                <span class="lbl" style="float: right;"> 平台</span>
+                                            </label>
+
+                                            <label>
+                                                <input name="type" value="1" type="radio" class="ace" />
+                                                <span class="lbl"  style="float: right;"> 公司</span>
+                                            </label>
+
+                                        </li></ul>
+                                        <div class="tijiao"><div class="abut"><a class="but_03" id="subClick">确认出售</a></div></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--售币列表开始-->
+                    <div class="tabku">
+                        <div class="tabtop">
+                            正在出售中的币
+                        </div>
+                        <div class="w100">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                <tbody>
+                                <tr class="trbt"  style="line-height: 32px;">
+                                    <td height="36" align="center" valign="middle">账号</td>
+                                    <td width="20%" align="center" valign="middle">出售数量(枚)</td>
+                                    <td width="20%" align="center" valign="middle">价格(元/枚DF)</td>
+                                    <td width="20%" align="center" valign="middle">总金额(元)</td>
+                                    <td width="10%" align="center" valign="middle">状态 </td>
+                                </tr>
+                                <? if(exist("pageAll") && pageAll != null){ ?>
+                                <?for(ff in pageAll.list!){?>
+                                <tr class="trhs"   style="line-height: 32px;">
+                                    <td align="center" valign="middle">${ff.login_name!}</td>
+                                    <td align="center" valign="middle">${ff.money!0}</td>
+                                    <td align="center" valign="middle">${ff.money_tormb!0}</td>
+                                    <td align="center" valign="middle">${ff.money*ff.money_tormb}</td>
+                                    <td align="center" valign="middle">${ChouShouStateMap[ff.state]}</td>
+                                </tr>
+                                <?}?>
+                                <? } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--分页开始-->
+                        <div class="tabend">
+                            <div class="fy">
+                                <form action="/user/chuShouBi" method="post" id="frm1">
+                                    <#pagination page="${pageAll!}" formId="frm1" />
+                                </form>
+                            </div>
+                        </div>
+                        <!--分页结束-->
+                    </div>
+
+
+
+                    <!--出售币结束-->
+                    <!--售币列表开始-->
+
+
+                </div>
+        <div class="tabku90">
+                <div class="w100">
+                    <div class="tabtop">
+                        我的出售记录
+                    </div>
+                    <div class="w100">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                            <tbody>
+                            <tr class="trbt"  style="line-height: 32px;">
+                                <td height="10%" align="center" valign="middle">出售方式</td>
+                                <td height="10%" align="center" valign="middle">账号</td>
+                                <td width="15%" align="center" valign="middle">出售数量(枚)</td>
+                                <td width="15%" align="center" valign="middle">价格(元/枚DF)</td>
+                                <td width="15%" align="center" valign="middle">总金额(元)</td>
+                                <td width="15%" align="center" valign="middle">状态 </td>
+                                <td  align="center" valign="middle" class="tdno">操作</td>
+                            </tr>
+                            <? if(exist("page") && page != null){ ?>
+                            <?for(ff in page.list!){?>
+                            <tr class="trhs"   style="line-height: 32px;">
+                                <td align="center" valign="middle">
+                                    <? if(ff.type==2){ ?>
+                                            平台
+                                    <? }else{ ?>
+                                        公司
+                                    <? }?>
+                                </td>
+                                <td align="center" valign="middle">${ff.login_name!}</td>
+                                <td align="center" valign="middle">${ff.money!0}</td>
+                                <td align="center" valign="middle">${ff.money_tormb!0}</td>
+                                <td align="center" valign="middle">${ff.money*ff.money_tormb}</td>
+                                <td align="center" valign="middle">${ChouShouStateMap[ff.state]}</td>
+                                <td align="center" valign="middle" class="tdno">
+                                    <? if(ff.type==2&&ff.state==1){ ?>
+                                    <a href="#" class="ared" onclick="return cancelShou(${ff.id},this)">取消</a>
+                                    <? }else{ ?>
+                                    <? }?>
+                                </td>
+                            </tr>
+                            <?}?>
+                            <? } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--分页开始-->
+                    <div class="tabend">
+                        <div class="fy">
+                            <form action="/user/chuShouBi" method="post" id="frm">
+                                <#pagination page="${page!}" formId="frm" />
+                            </form>
+                        </div>
+                    </div>
+                    <!--分页结束-->
+                </div>
+            </div>
+                <!--售币列表结束-->
+            </div>
+            <!--列表结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script>
+    var duiBi=0;
+    var myBi=${user.b1!0};
+    var chushouFeeBi=${chushouFeeBi!0};
+    var chushouliang=${chushouliang!0};
+    var chushoubei=${chushoubei!0};
+    $(function(){
+        duiBi=$("#feebi").val();
+        $("#dfShou,#feebi").keyup(function(){
+            moneyChange();
+        }).change(function(){
+            moneyChange();
+        });
+        $("#subClick").click(function(){
+            var zhuanMoney=$("#dfShou").val();
+            var safepass=$("#safepass").val();
+            if(zhuanMoney.length==0||zhuanMoney<=0)
+            {
+                showErr('请输入出售数量');
+                return false;
+            }else if(safepass.length==0)
+            {
+                showErr('请输入资金密码');
+                return false;
+            }else if(zhuanMoney<chushouliang)
+            {
+                showErr('出售量不能小于'+chushouliang);
+                return false;
+            }else if(zhuanMoney%chushoubei!=0)
+            {
+                showErr('出售量必须为'+chushoubei+"的倍数");
+                return false;
+            }
+            $("#subForm").submit();
+        });
+    })
+    function moneyChange(){
+        duiBi=$("#feebi").val();
+        if(chushouFeeBi>0){
+            if((chushouFeeBi*1.00/100+1)*parseInt($("#dfShou").val())>myBi){
+                showErr("出售数量与费率之和不能大于拥有数量");
+                $("#dfShou").val(parseInt(myBi/(chushouFeeBi*1.00/100+1)));
+            }
+        }
+        $("#dfMoney").val(parseInt($("#dfShou").val())*duiBi);
+    }
+    function cancelShou(id,ele){
+        if(confirm("取消不会返回平台佣金,确定要取消吗?")){
+            location.href="/user/chushouQuXiao?id="+id;
+        }else{
+            return false;
+        }
+    }
+</script>
+</html>

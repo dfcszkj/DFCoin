@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>站点信息 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<!--[if lte IE 9]>
+  <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />
+<!--[if lte IE 8]>
+<script src="${ctx}/js/html5shiv.js"></script>
+<script src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"system"}){}?>
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<ul class="breadcrumb">
+			<li><i class="ace-icon fa fa-home home-icon"></i> 
+				<a href="${ctx}/admin/account/dashboard">首页</a></li>
+			<li class="active">站点信息</li>
+		</ul>
+	</div>
+	<div class="page-content">
+		<div class="page-header">
+			<h1>站点信息
+			<small><i class="ace-icon fa fa-angle-double-right"></i>编辑</small>
+			</h1>
+		</div>
+		<div class="row">
+			<?if(!isEmpty(error)) {?>${error}<?}?>
+			<div class="col-xs-12">
+		  		<form action="${ctx}/admin/system/save" class="form-horizontal" method="POST" id="frm">
+				  	<div class="form-group">
+						<label class="col-sm-3 control-label" for="userlevel">激活等级名称</label>
+						<div class="col-sm-9">
+							<input type="text" id="userlevel" name="userlevel" value="${userlevel!}" placeholder="激活等级名称" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="userlevelmoney">激活等级金额</label>
+						<div class="col-sm-9">
+							<input type="text" id="userlevelmoney" name="userlevelmoney" value="${userlevelmoney}" placeholder="激活等级金额" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;	(枚,多个以,分割)</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="tuandui">比特币地址</label>
+						<div class="col-sm-9">
+							<input type="text" id="bite_url" name="bite_url" value="${bite_url}" placeholder="比特币地址" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="manmoney">流动币限制</label>
+						<div class="col-sm-9">
+							<input type="text" id="manmoney" name="manmoney" value="${manmoney}" placeholder="流动币限制" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;(枚,多个以,分割)</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="userState">会员等级名称</label>
+						<div class="col-sm-9">
+							<input type="text" id="userState" name="userState" value="${userState!}" placeholder="会员等级名称" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="tuandui">团队奖</label>
+						<div class="col-sm-9">
+							<input type="text" id="tuandui" name="tuandui" value="${tuandui}" placeholder="团队奖" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;多个以,分割,单个以|分割</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="fandate">返币周期</label>
+						<div class="col-sm-9">
+							<input type="number" id="fandate" name="fandate" value="${fandate!0}" placeholder="返币周期" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;天</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="moneyfanbi">返币比例</label>
+						<div class="col-sm-9">
+							<input type="number" id="moneyfanbi" name="moneyfanbi" value="${moneyfanbi!0}" placeholder="返币比例" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;%</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="phoneusercount">一套资料可注册会员数</label>
+						<div class="col-sm-9">
+							<input type="number" id="phoneusercount" name="phoneusercount" value="${phoneusercount!0}" placeholder="一套资料可注册会员数" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="updateLeveldate">升级日期限制(天)</label>
+						<div class="col-sm-9">
+							<input type="number" id="updateLeveldate" name="updateLeveldate" value="${updateLeveldate!0}" placeholder="升级日期限制" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="chushouPingTaifee">出售到平台手续费</label>
+						<div class="col-sm-9">
+							<input type="number" id="chushouPingTaifee" name="chushouPingTaifee" value="${chushouPingTaifee!0}" placeholder="升级日期限制" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;%</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="chushoufee">出售到公司手续费</label>
+						<div class="col-sm-9">
+							<input type="number" id="chushoufee" name="chushoufee" value="${chushoufee!0}" placeholder="升级日期限制" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;%</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="chanbidongjie">每日产币冻结钱包比例</label>
+						<div class="col-sm-9">
+							<input type="text" id="chanbidongjie" name="chanbidongjie" value="${chanbidongjie!0}" placeholder="每日产币冻结钱包比例" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;%</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="jiangdongjie">奖励冻结钱包比例</label>
+						<div class="col-sm-9">
+							<input type="text" id="jiangdongjie" name="jiangdongjie" value="${jiangdongjie!0}" placeholder="奖励冻结钱包比例" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;%</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="meiyuantormb">美元兑换人民币比例</label>
+						<div class="col-sm-9">
+							<input type="text" id="meiyuantormb" name="meiyuantormb" value="${meiyuantormb!0}" placeholder="美元兑换人民币" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">DFC兑换人民币比例</label>
+						<div class="col-sm-9">
+							${bitormb!0}
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="chushoujia">DFC兑换人民币比例出售</label>
+						<div class="col-sm-9">
+							<input type="text" id="chushoujia" name="chushoujia" value="${chushoujia!}" placeholder="DFC兑换人民币比例出售" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="">出售币</label>
+						<div class="col-sm-9">
+							数量必须大于等于
+							<input type="text" id="chushouliang" style="width: 20%;float: none;" name="chushouliang" value="${chushouliang!}" placeholder="" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;&nbsp;&nbsp;并且为&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="text" id="chushoubei" style="width: 20%;float: none;"  name="chushoubei" value="${chushoubei!}" placeholder="" class="col-xs-10 col-sm-5" />&nbsp;&nbsp;&nbsp;&nbsp;的整数倍
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="">提现</label>
+						<div class="col-sm-9">
+							数量必须大于等于
+							<input type="text" id="tixianliang" style="width: 20%;float: none;" name="tixianliang" value="${tixianliang!}" placeholder="" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;&nbsp;&nbsp;并且为&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="text" id="tixianbei" style="width: 20%;float: none;"  name="tixianbei" value="${tixianbei!}" placeholder="" class="col-xs-10 col-sm-5" />&nbsp;&nbsp;&nbsp;&nbsp;的整数倍
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label" for="">转币</label>
+						<div class="col-sm-9">
+							数量必须大于等于
+							<input type="text" id="zhuanbiliang" style="width: 20%;float: none;" name="zhuanbiliang" value="${zhuanbiliang!}" placeholder="" class="col-xs-10 col-sm-5" />
+							&nbsp;&nbsp;&nbsp;&nbsp;并且为&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="text" id="zhuanbinbei" style="width: 20%;float: none;"  name="zhuanbibei" value="${zhuanbibei!}" placeholder="" class="col-xs-10 col-sm-5" />&nbsp;&nbsp;&nbsp;&nbsp;的整数倍
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">开启充值功能</label>
+						<div class="col-sm-6">
+							<div>
+								<label>
+									<input name="enableChong" value="1" type="radio" class="ace" <?if(!isEmpty(enableChong) && enableChong! == 1){?>checked="checked"<?}?>/>
+									<span class="lbl"> 开启</span>
+								</label>
+								<label>
+									<input name="enableChong" value="0" type="radio" class="ace" <?if(isEmpty(enableChong) || enableChong! == 0){?>checked="checked"<?}?>/>
+									<span class="lbl"> 禁止</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-2 col-md-5">
+							<button class="btn btn-info pull-right" type="button" id="submitBtn">
+								<i class="ace-icon fa fa-check bigger-110"></i> 提交
+							</button>
+						</div>
+					</div>
+				 </form>								
+			</div> <!-- end col-xs-12 -->
+		</div><!-- end row -->
+	</div>
+</div>
+<?include("../../inc/footer.html"){}?>
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc-extra.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript">
+jQuery(function($) {
+	$("#submitBtn").click(function(){
+		$("#frm").attr("action", "${ctx}/admin/system/save");
+		$("#frm").submit();
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>仪表盘 - FinalCMS Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+<link rel="stylesheet" href="${ctx}/css/bootstrap.min.css" />
+<link rel="stylesheet" href="${ctx}/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery-ui.custom.min.css" />
+<link rel="stylesheet" href="${ctx}/css/jquery.gritter.css" />
+	<link type="text/css" rel="stylesheet" href="${ctx}/components/fileinput/css/fileinput.css" />
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="${ctx}/css/fc-part2.min.css" />
+<![endif]-->
+<link rel="stylesheet" href="${ctx}/css/fc-skins.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-rtl.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-fonts.css" />
+<link rel="stylesheet" href="${ctx}/css/fc.min.css" />
+<link rel="stylesheet" href="${ctx}/css/fc-custom.css" />
+
+<!--[if lte IE 9]>
+ <link rel="stylesheet" href="${ctx}/css/fc-ie.min.css" />
+<![endif]-->
+
+<!--[if lte IE 8]>
+<script type="text/javascript" src="${ctx}/js/html5shiv.js"></script>
+<script type="text/javascript" src="${ctx}/js/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="no-skin">
+<?include("../../inc/menu.html",{current:"web_add"}){}?>
+<div class="main-content">
+<div class="breadcrumbs" id="breadcrumbs">
+	<ul class="breadcrumb">
+		<li><i class="ace-icon fa fa-home home-icon"></i> <a href="${ctx}/admin/account/dashboard">首页</a>
+		</li>
+		<li class="active">网页</li>
+	</ul>
+</div>
+
+<div class="page-content">
+	<div class="page-header">
+		<h1>网页
+		<small><i class="ace-icon fa fa-angle-double-right"></i> <?if(isEmpty(f)) {?>添加<?}else{?>编辑<?}?></small>
+		</h1>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+		<?if(!isEmpty(error)) {?>${error}<?}?>
+		<form id="frm" class="form-horizontal" role="form" method="post" >
+			<input type="hidden" name="state" id="state" />
+			<input type="hidden" name="content" id="content"   />
+			<input type="hidden" name="id" id="id" value="${id!}"/>
+			<div class="form-group">
+				<label class="col-sm-3 control-label" for="form-field-1">标题</label>
+				<div class="col-sm-9">
+					<input type="text" id="title" name="title" value="${title!}" placeholder="标题" class="col-xs-10 col-sm-5" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label" for="form-field-1"></label>
+				<span class="help-inline col-xs-1 col-sm-1">
+					<label class="middle">
+						<?if(isEmpty(f) || f.state==1 ){?>
+						<input class="ace" type="checkbox" id="_state" checked="checked" />
+						<span class="lbl"> 启用</span>
+						<?} else {?>
+						<input class="ace" type="checkbox" id="_state"/>
+						<span class="lbl"> 禁用</span>
+						<?}?>
+					</label>
+				</span>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label" for="form-field-1">内容</label>
+				<div class="col-sm-9">
+					<script id="editor" type="text/plain" style="height: 500px;">${content!}</script>
+				</div>
+			</div>
+			<div class="clearfix form-actions">
+				<div class="col-md-offset-2 col-md-5">
+					<?if(!isEmpty(f)){?>
+					<a class="btn btn-sm pull-left" href="${ctx}/admin/friendlink">
+						<i class="ace-icon fa fa-arrow-left"></i> 返回
+					</a>
+					<?}?>
+					<button class="btn btn-info pull-right" type="button" id="submitBtn">
+						<i class="ace-icon fa fa-check bigger-110"></i> 提交
+					</button>
+				</div>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<?include("../../inc/footer.html"){}?>
+
+<script type="text/javascript" src='${ctx}/js/jquery1.11.0.min.js'></script>
+<script type="text/javascript" src="${ctx}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/components/fileinput/js/fileinput.js"></script>
+<script type="text/javascript" src="${ctx}/components/fileinput/js/fileinput_locale_zh.js"></script>
+<script type="text/javascript" src="${ctx}/js/fc.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="${ctx}/ext/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="${ctx}/ext/ueditor/ueditor.all.js"> </script>
+<!--加载语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<script type="text/javascript" charset="utf-8" src="${ctx}/ext/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+	//实例化编辑器
+	//建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+	var ue = UE.getEditor('editor');
+	jQuery(function($) {
+		ue.ready(function() {
+			//设置编辑器的内容
+			//获取html内容，返回: <p>hello</p>
+			//var html = ue.getContent();
+			//获取纯文本内容，返回: hello
+			//var txt = ue.getContentTxt();
+		});
+		projectfileoptions :
+// 文件上传框
+				$('input[class=projectfile]').each(function() {
+					var imageurl = $(this).attr("value");
+
+					if (imageurl) {
+						var op = $.extend({
+							initialPreview : [ // 预览图片的设置
+								"<img src='" + imageurl + "' class='file-preview-image'>", ]
+						}, {
+							showUpload : false,
+							showRemove : false,
+							language : 'zh',
+							allowedPreviewTypes : [ 'image' ],
+							allowedFileExtensions : [ 'jpg', 'png', 'gif' ],
+							maxFileSize : 2000,
+						});
+
+						$(this).fileinput(op);
+					} else {
+						$(this).fileinput({
+							showUpload : false,
+							showRemove : false,
+							language : 'zh',
+							allowedPreviewTypes : [ 'image' ],
+							allowedFileExtensions : [ 'jpg', 'png', 'gif' ],
+							maxFileSize : 2000,
+						});
+					}
+				});
+
+		$("#submitBtn").click(function(){
+			$("#content").val(ue.getContent());
+			if($.trim($("#title").val()).length == 0) {
+				alert("标题不能为空");
+				return false;
+			}
+
+			if($("#_state").is(":checked")) {
+				$("#state").val(1);
+			} else {
+				$("#state").val(0);
+			}
+
+			<?if(isEmpty(id)) {?>
+				$("#frm").attr("action", "${ctx}/admin/web/save");
+			<?}else{?>
+				$("#frm").attr("action", "${ctx}/admin/web/doEdit");
+			<?}?>
+			$("#frm").submit();
+		});
+	});
+</script>
+</body>
+</html>

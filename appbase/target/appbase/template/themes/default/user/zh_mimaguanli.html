@@ -1,0 +1,177 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="width=device-width,user-scalable=no" name="viewport">
+    <title>${system.name}</title>
+    <link href="${ctx}/template/themes/${site.theme!}/user/css/css_ad.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<?include("../../../inc/menufront.html",{current:"dashboard"}){}?>
+            <!--登录密码开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>修改登录密码</span></div>
+                </div>
+                <div class="w90">
+                    <form action="/ajax/doPassEdit" method="post" id="passEditForm">
+                        <div class="tab_ul">
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>原登录密码：</li><li class="li2"><input type="password" id="oldPass" name="oldPass" class="inptex" placeholder="请输入原登录密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>新密码：</li><li class="li2"><input type="password" class="inptex" id="password" name="password" placeholder="设置新密码，数字、字母或者下划线，至少6位" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>确认密码：</li><li class="li2"><input type="password" class="inptex" id="repwd" placeholder="重复输入新密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>二级密码：</li><li class="li2"><input type="password" class="inptex" id="secondPass" name="secondPass" placeholder="输入您的二级密码" style="width:90%;"></li></ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="passEdit">确认修改</a></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--登录密码结束-->
+            <!--二级密码开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>修改二级密码</span></div>
+                </div>
+                <div class="w90">
+                    <form action="/ajax/doSecondPassEdit" method="post" id="secondEditForm">
+                        <div class="tab_ul">
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>原二级密码：</li><li class="li2"><input type="password"  name="oldPass" class="inptex" placeholder="请输入原二级密码" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>新密码：</li><li class="li2"><input type="password" name="password" class="inptex" placeholder="设置新密码，数字、字母或者下划线，至少6位" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>确认密码：</li><li class="li2"><input type="password"  class="inptex" placeholder="重复输入新密码" style="width:90%;"></li></ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="secondEdit">确认修改</a></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--二级密码结束-->
+            <!--资金密码开始-->
+            <div class="tabku90">
+                <div class="tabtop">
+                    <div class="tabtople1"><img src="${ctx}/template/themes/${site.theme!}/user/images/dian_tab6.png" /><span>修改资金密码</span></div>
+                </div>
+                <div class="w90">
+                    <form action="/ajax/doSafePassEdit" method="post" id="safePassForm">
+                        <div class="tab_ul">
+                            <ul>
+                                <li class="li1"><font class="fontred">*&nbsp;</font>原资金密码：</li>
+                                <li class="li2"><input type="password" name="oldPass" class="inptex" placeholder="请输入原资金密码" style="width:90%;"></li>
+                            </ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>新密码：</li><li class="li2"><input type="password" name="password" class="inptex" placeholder="设置新密码，数字、字母或者下划线，至少6位" style="width:90%;"></li></ul>
+                            <ul><li class="li1"><font class="fontred">*&nbsp;</font>确认密码：</li><li class="li2"><input type="password" class="inptex" placeholder="重复输入新密码" style="width:90%;"></li></ul>
+                            <div class="tijiao"><div class="abut"><a class="but_03" id="safePassEdit">确认修改</a></div></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--资金密码结束-->
+            <!--温馨提示开始-->
+            <div class="tishi">
+                <font class="font16"><strong>温馨提示</strong></font><br />
+                为了保障资金安全，请定期修改密码！
+            </div>
+            <!--温馨提示结束-->
+            <div class="jiange">&nbsp;</div>
+        </div>
+    </div>
+    <!--右侧结束-->
+</body>
+</html>
+<script type="text/javascript" src="${ctx}/js/jquery1.11.0.min.js"></script>
+<script type="text/javascript" src="${ctx}/js/jquery.form.js"></script>
+<script type="text/javascript" src="${ctx}/js/gravel.js"></script>
+<script src="${ctx}/layer/layer.js"></script>
+<script src="${ctx}/js/common.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#passEdit").click(function(){
+            var oldPass=$("#passEditForm :password:eq(0)").val();
+            var newPass=$("#passEditForm :password:eq(1)").val();
+            var repass=$("#passEditForm :password:eq(2)").val();
+            var secondPass=$("#passEditForm :password:eq(3)").val();
+            if(oldPass.length==0)
+            {
+                showErr('请输入原密码');
+                return false;
+            }else if(newPass.length==0)
+            {
+                showErr('请输入新密码');
+                return false;
+            }else if(newPass.length<6||newPass.length>25)
+            {
+                showErr('密码长度需在6-25位之间');
+                return false;
+            }else if(newPass!=repass)
+            {
+                showErr('两次密码不一致');
+                return false;
+            }else if(newPass.length==0)
+            {
+                showErr('请输入二级密码');
+                return false;
+            }
+            $("#passEditForm").ajaxSubmit(function(obj){
+                showErr(obj.message);
+                if(obj.result){
+                    $("#passEditForm :password").val("");
+                }
+            });
+        });
+
+        $("#secondEdit").click(function(){
+            var oldPass=$("#secondEditForm :password:eq(0)").val();
+            var newPass=$("#secondEditForm :password:eq(1)").val();
+            var repass=$("#secondEditForm :password:eq(2)").val();
+            if(oldPass.length==0)
+            {
+                showErr('请输入原二级密码');
+                return false;
+            }else if(newPass.length==0)
+            {
+                showErr('请输入新二级密码');
+                return false;
+            }else if(newPass.length<6||newPass.length>25)
+            {
+                showErr('密码长度需在6-25位之间');
+                return false;
+            }else if(newPass!=repass)
+            {
+                showErr('两次密码不一致');
+                return false;
+            }
+            $("#secondEditForm").ajaxSubmit(function(obj){
+                showErr(obj.message);
+                if(obj.result){
+                    $("#secondEditForm :password").val("");
+                }
+            });
+        });
+
+        $("#safePassEdit").click(function(){
+            var oldPass=$("#safePassForm :password:eq(0)").val();
+            var newPass=$("#safePassForm :password:eq(1)").val();
+            var repass=$("#safePassForm :password:eq(2)").val();
+            if(oldPass.length==0)
+            {
+                showErr('请输入原资金密码');
+                return false;
+            }else if(newPass.length==0)
+            {
+                showErr('请输入新资金密码');
+                return false;
+            }else if(newPass.length<6||newPass.length>25)
+            {
+                showErr('密码长度需在6-25位之间');
+                return false;
+            }else if(newPass!=repass)
+            {
+                showErr('两次密码不一致');
+                return false;
+            }
+            $("#safePassForm").ajaxSubmit(function(obj){
+                showErr(obj.message);
+                if(obj.result){
+                    $("#safePassForm :password").val("");
+                }
+            });
+        });
+    })
+</script>
